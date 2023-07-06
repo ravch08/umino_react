@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Location = () => {
+
    return (
       <section className="location" aria-labelledby="Location">
          <iframe
@@ -12,4 +13,4 @@ const Location = () => {
    )
 }
 
-export default Location
+export default Location;

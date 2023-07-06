@@ -35,7 +35,28 @@ const Contact = () => {
                </Stack>
             </div>
          </section>
-      </main>
+
+         <section className="contactForm">
+            <div className="container">
+               <div className="section-heading">
+                  <h2>Get in Touch</h2>
+                  <p>We'd love to hear from you about our entire service. Your comments and suggestions will be highly appreciated. Please complete the form below.</p>
+               </div>
+
+               <form method="post" className="contact-form">
+                  <Stack direction={{ xs: 'column', md: 'row' }}>
+                     <input type="text" className="form-input" name="contact[name]" placeholder="Name" />
+                     <input type="email" className="form-input" name="contact[email]" required placeholder="Email" />
+                  </Stack>
+
+                  <textarea name="contact[body]" className="form-input-text" rows="8" placeholder="Comment"></textarea>
+
+                  <input type="submit" className="btn btn-dark" value="Send Message" />
+               </form>
+            </div>
+         </section >
+
+      </main >
    )
 }
 

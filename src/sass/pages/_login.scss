@@ -1,0 +1,68 @@
+@use "../abstracts/helper" as *;
+
+.login-form {
+  .form {
+    flex-basis: 45%;
+  }
+  .new-customer {
+    flex-basis: 45%;
+
+    p {
+      margin-bottom: 4rem;
+    }
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.register {
+  .form {
+    width: 60%;
+    margin: 0 auto;
+    p {
+      margin-bottom: 4rem;
+    }
+
+    .btn-dark {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .btn-light {
+      text-align: center;
+    }
+  }
+}
+
+.form {
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: $fs-h4;
+      margin-bottom: 1rem;
+      color: $color-Dark-400;
+
+      span {
+        color: red;
+      }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      padding: 1.5rem;
+      border-radius: 4rem;
+      margin-bottom: 2.5rem;
+      border: 0.1rem solid $color-light-400;
+    }
+
+    .forgotPassword {
+      margin-bottom: 4rem;
+      color: $color-Dark-800;
+    }
+  }
+}

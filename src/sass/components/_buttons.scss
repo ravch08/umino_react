@@ -1,36 +1,39 @@
-@use "../abstracts/helper"as *;
+@use "../abstracts/helper" as *;
 
 .btn {
-   font-size: $fs-btn;
-   border-radius: 8rem;
-   padding: 1.6rem 6rem;
-   display: inline-block;
+  font-size: $fs-btn;
+  border-radius: 8rem;
+  padding: 1.6rem 6rem;
+  display: inline-block;
 }
 
 .btn-dark {
-   border: none;
-   cursor: pointer;
-   color: white;
-   background-color: $color-Dark-800;
-   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: $color-Dark-800;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 
-   &:hover {
-      color: $color-Dark-800;
-      background-color: white;
-      box-shadow: $box-shadow-md;
-   }
+  &:hover {
+    color: $color-Dark-800;
+    background-color: white;
+    box-shadow: $box-shadow-md;
+  }
 }
 
 .btn-light {
-   border: none;
-   cursor: pointer;
-   color: $color-Dark-800;
-   background-color: white;
-   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  color: $color-Dark-800;
+  background-color: white;
+  border: 0.1rem solid $color-light-400;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 
-   &:hover {
-      color: white;
-      box-shadow: $box-shadow-md;
-      background-color: $color-Dark-800;
-   }
+  &:hover {
+    color: white;
+    box-shadow: $box-shadow-md;
+    border: 0.1rem solid transparent;
+    background-color: $color-Dark-800;
+  }
 }
