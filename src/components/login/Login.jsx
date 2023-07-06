@@ -12,6 +12,7 @@ const Login = () => {
             title="Login"
             superHeading="WELCOME TO UMINO"
          />
+
          <section className="login-form" aria-labelledby="Login Form">
             <div className="container">
                <Stack

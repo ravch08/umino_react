@@ -5,8 +5,9 @@ import { Stack } from '@mui/material';
 const WhyChoose = () => {
 
    return (
-      <section className="whyChoose">
+      <section className="whyChoose" >
          <div className="container">
+
             <div className="section-heading">
                <span className="superHeading">WHY CHOOSE US</span>
                <h2>Our Unique Things</h2>

@@ -24,6 +24,7 @@
 
 .product-card {
   flex-basis: 22%;
+  overflow: hidden;
 
   .product-imgs {
     position: relative;
@@ -44,6 +45,10 @@
         visibility: visible;
         bottom: 4%;
       }
+
+      .productCart-options {
+        right: 3%;
+      }
     }
   }
 
@@ -61,7 +66,6 @@
   }
 
   figure {
-    overflow: hidden;
     position: relative;
     border-radius: 1.2rem;
   }
@@ -83,7 +87,35 @@
   .productCart-options {
     position: absolute;
     top: 3%;
-    right: 3%;
+    gap: 1rem;
+    right: -20%;
+    transition: right 0.6s ease-in-out;
+
+    .wishlist,
+    .compare,
+    .viewed {
+      width: 4rem;
+      height: 4rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 50%;
+      color: $color-Dark-800;
+      @extend .flexRow-center;
+      background-color: white;
+      transition: background-color 0.3s ease-in-out;
+
+      svg {
+        fill: black;
+      }
+
+      &:hover {
+        background-color: $color-Dark-800;
+
+        svg {
+          fill: white;
+        }
+      }
+    }
   }
 
   .product-content {

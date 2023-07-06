@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Stack } from '@mui/material';
+import { Card, Stack, Typography } from '@mui/material';
 
 import { blogItems } from '../utils/data';
 import { Link } from 'react-router-dom';
@@ -31,7 +31,9 @@ const Blog = () => {
 
                         <div className="blog-content">
                            <span>{item.category}</span>
-                           <Link to="#!"><h3>{item.title}</h3></Link>
+                           <Link to="#!">
+                              <Typography variant='h4' component={'h3'}>{item.title}</Typography>
+                           </Link>
                            <p>{item.description}</p>
                         </div>
 

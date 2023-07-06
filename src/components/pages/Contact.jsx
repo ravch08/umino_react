@@ -24,12 +24,12 @@ const Contact = () => {
                >
                   {contactAddressItems?.map(item => {
                      return (
-                        <div className="address-item" key={item.id}>
-                           <Typography variant='h4' component={'h2'}>{item.branch}</Typography>
+                        <Stack direction={'column'} className="address-item" key={item.id}>
+                           <Typography variant='h4' mb={'2rem'} component={'h2'}>{item.branch}</Typography>
                            <p>{item.address}</p>
-                           <a href={`tel:+${item.tel}`}>{item.tel}</a>
+                           <a href={`tel:+${item.tel}`} className='address-phone'>Tel: {item.tel}</a>
                            <p><span>Opening Hours:</span> {item.hours}</p>
-                        </div>
+                        </Stack>
                      )
                   })}
                </Stack>
@@ -43,16 +43,21 @@ const Contact = () => {
                   <p>We'd love to hear from you about our entire service. Your comments and suggestions will be highly appreciated. Please complete the form below.</p>
                </div>
 
-               <form method="post" className="contact-form">
-                  <Stack direction={{ xs: 'column', md: 'row' }}>
-                     <input type="text" className="form-input" name="contact[name]" placeholder="Name" />
-                     <input type="email" className="form-input" name="contact[email]" required placeholder="Email" />
-                  </Stack>
+               <div className="form">
+                  <form method="post" className="contact-form">
+                     <Stack direction={{ xs: 'column', md: 'row' }} gap={'2rem'} alignItems={'center'}>
+                        <label htmlFor="form_Name">First Name <span>*</span></label>
+                        <input type="text" name="form_Name" placeholder="Name" required />
 
-                  <textarea name="contact[body]" className="form-input-text" rows="8" placeholder="Comment"></textarea>
+                        <label htmlFor="form_email">Email <span>*</span></label>
+                        <input type="email" name="form_email" placeholder="Your email*" required />
+                     </Stack>
 
-                  <input type="submit" className="btn btn-dark" value="Send Message" />
-               </form>
+                     <textarea name="contactText" rows="8" placeholder="Comment"></textarea>
+
+                     <input type="submit" className="btn btn-dark" value="SEND MESSAGE" />
+                  </form>
+               </div>
             </div>
          </section >
 

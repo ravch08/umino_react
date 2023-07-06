@@ -22,7 +22,7 @@ const Register = () => {
                      <label htmlFor="form_firstName">First Name <span>*</span></label>
                      <input type="text" name="form_firstName" placeholder="First Name" />
 
-                     <label htmlFor="form_password">Password <span>*</span></label>
+                     <label htmlFor="form_lastName">Last Name <span>*</span></label>
                      <input type="text" name="form_lastName" placeholder="Last Name" />
 
                      <label htmlFor="form_email">Email <span>*</span></label>

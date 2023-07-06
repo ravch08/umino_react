@@ -47,6 +47,7 @@ export { default as product10_2 } from "../../assets/trending_6_2.jpg";
 export { default as ourCompany } from "../../assets/aboutus_info.jpg";
 export { default as whychoose1 } from "../../assets/banner-about-1.webp";
 export { default as whychoose2 } from "../../assets/banner-about-2.webp";
+export { default as whychoose3 } from "../../assets/banner-about-3.webp";
 export { default as bannerLogin } from "../../assets/banner_login.jpg";
 export { default as bannerAboutUs } from "../../assets/banner_aboutus.jpg";
 export { default as bannerRegister } from "../../assets/banner_register.jpg";

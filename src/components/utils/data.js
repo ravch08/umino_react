@@ -1,5 +1,5 @@
 import {
-   category1, category2, category3, category4, category5, category6, salesBanner1, salesBanner2, shipping1, shipping2, shipping3, blog1, blog2, blog3, banner1, banner2, banner1_768, banner2_768, banner1_1024, banner2_1024, banner1_1200, banner2_1200, bannerAboutUs, whychoose1, whychoose2, product1_1, product1_2, product2_1, product2_2, product3_1, product3_2, product4_1, product4_2, product5_1, product5_2, product6_1, product6_2, product7_1, product7_2, product8_1, product8_2, product9_1, product9_2, product10_1, product10_2
+   category1, category2, category3, category4, category5, category6, salesBanner1, salesBanner2, shipping1, shipping2, shipping3, blog1, blog2, blog3, banner1, banner2, banner1_768, banner2_768, banner1_1024, banner2_1024, banner1_1200, banner2_1200, bannerAboutUs, whychoose1, whychoose2, whychoose3, product1_1, product1_2, product2_1, product2_2, product3_1, product3_2, product4_1, product4_2, product5_1, product5_2, product6_1, product6_2, product7_1, product7_2, product8_1, product8_2, product9_1, product9_2, product10_1, product10_2
 } from "../utils/helper";
 
 export const categoryItems = [
@@ -153,7 +153,7 @@ export const whyChooseItems = [
    },
    {
       id: 'wc3',
-      imgSrc: whychoose1,
+      imgSrc: whychoose3,
       title: "Freedom for Everyone",
       description: `The designs have been created adopting the current trends, while leaving room for personal expression among young people.`,
    },
