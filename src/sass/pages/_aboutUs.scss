@@ -1,0 +1,57 @@
+@use "../abstracts/helper" as *;
+
+.page-banner {
+  padding: 0 0 6rem;
+}
+
+.our-company {
+  .company-content {
+    width: 42%;
+
+    h2 {
+      padding: 1.5rem 0;
+    }
+  }
+
+  figure {
+    width: 55%;
+    border-radius: 1.2rem;
+  }
+
+  img {
+    border-radius: 1.2rem;
+  }
+}
+
+.unique-item {
+  width: 32%;
+
+  figure {
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: $fs-h4;
+    margin-bottom: 1rem;
+  }
+}
+
+.green-banner {
+  background-color: $color-quaternary;
+
+  .banner-content {
+    width: 65%;
+    text-align: center;
+    margin-inline: auto;
+
+    p {
+      font-size: $fs-h4;
+      margin-bottom: 3rem;
+      color: $color-tertiary;
+    }
+
+    span {
+      color: white;
+    }
+  }
+}

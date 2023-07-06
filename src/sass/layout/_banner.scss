@@ -1,0 +1,107 @@
+@use "../abstracts/helper" as *;
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.banner {
+  padding: 0 0 6rem;
+
+  .swiper-button-next {
+    right: 2%;
+  }
+
+  .swiper-button-prev {
+    left: 2%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    opacity: 0;
+    width: 6rem;
+    height: 6rem;
+    visibility: hidden;
+    border-radius: 50%;
+    background-color: white;
+    transform: translateY(0.8rem);
+    transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out,
+      opacity 0.3s ease-in-out, color 0.3s ease-in-out,
+      background-color 0.3s ease-in-out;
+
+    &::after {
+      fill: black;
+      font-size: 1.4rem;
+    }
+
+    &:hover {
+      color: white;
+      background-color: black;
+    }
+  }
+
+  &:hover {
+    .swiper-button-next,
+    .swiper-button-prev {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+
+.banner-item {
+  position: relative;
+
+  .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+
+    .superheading {
+      color: white;
+      animation-delay: 150ms;
+      animation-name: fadeInUp;
+      font-size: $fs-subheading;
+      text-transform: uppercase;
+      animation-duration: 2000ms;
+    }
+
+    h1 {
+      color: white;
+      font-weight: 400;
+      animation-delay: 150ms;
+      animation-name: fadeInUp;
+      animation-duration: 2000ms;
+    }
+
+    p {
+      color: white;
+      margin-bottom: 4rem;
+      animation-delay: 200ms;
+      animation-name: fadeInUp;
+      animation-duration: 2000ms;
+    }
+
+    .btn-light {
+      animation-delay: 250ms;
+      animation-name: fadeInUp;
+      animation-duration: 2000ms;
+    }
+  }
+}

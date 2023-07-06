@@ -1,0 +1,40 @@
+@use "../abstracts/helper" as *;
+
+.blog {
+  .blog-item {
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  figure {
+    overflow: hidden;
+    border-radius: 0.8rem;
+  }
+
+  img {
+    width: 100%;
+    transform: scale(1);
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .blog-content {
+    padding: 1.8rem 0.3rem;
+
+    h3 {
+      padding: 1.2rem 0;
+      color: $color-Dark-800;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  span {
+    font-weight: 600;
+    color: $color-light-800;
+  }
+}

@@ -1,0 +1,11 @@
+@use "../abstracts/helper" as *;
+
+.location {
+  padding-top: 0;
+}
+
+.contactInfo {
+  .address-item {
+    flex-basis: 30%;
+  }
+}
