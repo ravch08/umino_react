@@ -1,4 +1,4 @@
-@use "../abstracts/helper" as *;
+@import "../abstracts/variables.css";
 
 .login-form {
   .form {
@@ -42,9 +42,9 @@
     flex-direction: column;
 
     label {
-      font-size: $fs-h4;
+      font-size: var(--fs-h4);
       margin-bottom: 1rem;
-      color: $color-Dark-400;
+      color: var(--color-Dark-400);
 
       span {
         color: red;
@@ -57,12 +57,12 @@
       padding: 1.5rem;
       border-radius: 4rem;
       margin-bottom: 2.5rem;
-      border: 0.1rem solid $color-light-400;
+      border: 0.1rem solid var(--color-light-400);
     }
 
     .forgotPassword {
       margin-bottom: 4rem;
-      color: $color-Dark-800;
+      color: var(--color-Dark-800);
     }
   }
 }

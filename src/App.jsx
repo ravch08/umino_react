@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 import { Routes, Route, BrowserRouter, useLocation } from 'react-router-dom';
 
 import { Home, AboutUs, Cart, Category, Contact, Page404, ProductDetail, Wishlist, Login, Register, Header, Footer } from "./components/utils/helper";
@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="cart" element={<Cart />} />
           <Route path="login" element={<Login />} />
-          <Route path="aboutus" element={<AboutUs />} />
+          <Route path="aboutUs" element={<AboutUs />} />
           <Route path="contact" element={<Contact />} />
           <Route path="register" element={<Register />} />
           <Route path="wishlist" element={<Wishlist />} />

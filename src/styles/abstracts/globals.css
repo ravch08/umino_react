@@ -1,4 +1,4 @@
-@use "./variables"as v;
+@import "../abstracts/variables.css";
 
 *,
 *::after,
@@ -23,41 +23,42 @@ body {
   min-height: 100vh;
   font-size: 1.4rem;
   overflow-x: hidden;
-  color: v.$color-body;
+  color: var(--color-body);
   box-sizing: border-box;
-  font-family: v.$fm-body;
+  font-family: var(--fm-body);
   background-color: white;
+  user-select: none;
 
   &::-webkit-scrollbar {
     width: 0.8rem;
   }
 
   &::-webkit-scrollbar-track {
-    background: v.$color-scrollbar;
+    background: var(--color-scrollbar);
   }
 
   &::-webkit-scrollbar-thumb {
-    background: v.$color-scrollThumb;
+    background: var(--color-scrollThumb);
   }
 }
 
-@supports (scrollbar-color: v.$color-scrollThumb v.$color-scrollbar) {
+@supports (scrollbar-color: var(--color-scrollThumb) var(--color-scrollbar)) {
   * {
     scrollbar-width: thin;
-    scrollbar-color: v.$color-scrollThumb v.$color-scrollbar;
+    scrollbar-color: var(--color-scrollThumb) var(--color-scrollbar);
   }
 }
 
-// -- PROPERTY  --------------------------------------------------------------------
+/* // -- PROPERTY  -------------------------------------------------------------------- */
 
 h1,
 h2,
 h3,
 h4 {
   font-weight: 400;
-  color: v.$color-Dark-800;
-  line-height: v.$lh-heading;
-  font-family: v.$fm-primary;
+  color: var(--color-Dark-800);
+  line-height: var(--lh-heading);
+  font-family: var(--fm-primary);
 }
 
 input,
@@ -69,7 +70,7 @@ textarea {
   line-height: 1.15;
 }
 
-ul:not(.browser-default)>li {
+ul:not(.browser-default) > li {
   list-style: none;
 }
 
@@ -78,24 +79,24 @@ a:not(.browser-default) {
 }
 
 p {
-  font-size: v.$fs-body;
+  font-size: var(--fs-body);
 }
 
 h1 {
   margin: 1rem 0;
-  font-size: v.$fs-h1;
+  font-size: var(--fs-h1);
 }
 
 h2 {
-  font-size: v.$fs-h2;
+  font-size: var(--fs-h2);
 }
 
 h3 {
-  font-size: v.$fs-h3;
+  font-size: var(--fs-h3);
 }
 
 h4 {
-  font-size: v.$fs-h4;
+  font-size: var(--fs-h4);
 }
 
 figure {
@@ -116,7 +117,6 @@ small {
 /* OPTIONAL -- remove animations for people who've turned them off */
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {

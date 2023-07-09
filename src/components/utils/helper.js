@@ -51,6 +51,7 @@ export { default as whychoose3 } from "../../assets/banner-about-3.webp";
 export { default as bannerLogin } from "../../assets/banner_login.jpg";
 export { default as bannerAboutUs } from "../../assets/banner_aboutus.jpg";
 export { default as bannerRegister } from "../../assets/banner_register.jpg";
+export { default as bannerWishlist } from "../../assets/banner_wishlist.jpg";
 
 export { default as salesBanner1 } from "../../assets/sales_banner_1.webp";
 export { default as salesBanner2 } from "../../assets/sales_banner_2.webp";
@@ -70,6 +71,7 @@ export { default as Location } from "../layouts/Location";
 export { default as ScrollTop } from "../layouts/ScrollTop";
 export { default as WhyChoose } from "../layouts/WhyChoose";
 export { default as PageBanner } from "../layouts/PageBanner";
+export { default as ProductCard } from "../layouts/ProductCard";
 export { default as GreenBanner } from "../layouts/GreenBanner";
 export { default as SocialIcons } from "../layouts/SocialIcons";
 export { default as AboutCompany } from "../layouts/AboutCompany";

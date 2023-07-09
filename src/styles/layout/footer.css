@@ -1,4 +1,4 @@
-@use "../abstracts/helper" as *;
+@import "../abstracts/variables.css";
 
 footer {
   width: 95%;
@@ -6,12 +6,14 @@ footer {
   border-radius: 1.2rem;
   margin-inline: auto;
   margin-bottom: 2rem;
-  color: $color-light-800;
-  background-color: $color-footer;
+  color: var(--color-light-800);
+  background-color: var(--color-footer);
 
   .footer-item {
     width: 25%;
-    @extend .flexColumn-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 
     span {
       padding: 1.6rem 0;
@@ -19,7 +21,7 @@ footer {
 
     a {
       padding: 0.6rem 0;
-      color: $color-light-800;
+      color: var(--color-light-800);
       transition: color 0.3s ease-in-out;
 
       &:hover {
@@ -46,7 +48,7 @@ footer {
 
     .ftr-link {
       padding: 0.6rem 0;
-      color: $color-light-800;
+      color: var(--color-light-800);
       transition: color 0.3s ease-in-out;
 
       &:hover {
@@ -71,7 +73,7 @@ footer {
         width: 80%;
         border-radius: 5rem;
         background-color: transparent;
-        border: 0.1rem solid $color-light-800;
+        border: 0.1rem solid var(--color-light-800);
       }
 
       .btn {
@@ -93,12 +95,14 @@ footer {
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    @extend .flexRow-center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: border 0.3s ease-in-out;
-    border: 0.1rem solid $color-light-800;
+    border: 0.1rem solid var(--color-light-800);
 
     svg {
-      fill: $color-light-800;
+      fill: var(--color-light-800);
       transition: fill 0.3s ease-in-out;
     }
 
@@ -122,14 +126,17 @@ footer {
   cursor: pointer;
   border-radius: 50%;
   transform: scale(0);
-  @extend .flexRow-center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border: 0.1rem solid white;
-  box-shadow: $box-shadow-md;
-  background-color: $color-Dark-800;
+  box-shadow: var(--box-shadow-md);
+  background-color: var(--color-Dark-800);
   transition: transform 0.6s ease-in-out, background-color 0.3s ease-in-out;
 
   &:hover {
-    background-color: lighten($color-Dark-800, 20%);
+    background-color: var(--color-Dark-800);
   }
 
   svg {
@@ -141,12 +148,12 @@ footer {
   }
 }
 
-// @media screen and (max-width: 991px) {
+/* // @media screen and (max-width: 991px) {
 
 //    footer {
 
 //       .footer-item {
-//          width: 100%;
+//          width: 100%;width
 //       }
 //    }
-// }
+// } */

@@ -1,4 +1,4 @@
-@use "../abstracts/helper" as *;
+@import "../abstracts/variables.css";
 
 header {
   transition: padding 0.6s ease-in-out;
@@ -11,13 +11,15 @@ header {
     position: fixed;
     padding: 0.5rem 0;
     background-color: white;
-    box-shadow: $box-shadow-md;
+    box-shadow: var(--box-shadow-md);
   }
 
   .nav-list,
   .header-wrapper {
     gap: 1rem;
-    @extend .flexRow-between;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .nav-list {
@@ -28,24 +30,26 @@ header {
     .nav-link {
       font-weight: 600;
       padding: 2.5rem 1rem;
-      color: $color-Dark-800;
+      color: var(--color-Dark-800);
       transition: color 0.3s ease-in-out;
 
       &:hover {
-        color: $color-primary;
+        color: var(--color-primary);
       }
     }
   }
 
   .user-info {
     gap: 1.8rem;
-    @extend .flexRow-between;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     svg {
-      fill: $color-Dark-800;
+      fill: var(--color-Dark-800);
 
       &:hover {
-        fill: $color-primary;
+        fill: var(--color-primary);
       }
     }
 
@@ -61,8 +65,10 @@ header {
         height: 2rem;
         font-size: 1rem;
         border-radius: 50%;
-        @extend .flexRow-center;
-        background-color: $color-primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-primary);
       }
     }
   }

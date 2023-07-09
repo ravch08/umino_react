@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { Stack } from '@mui/material';
 
-import { productItems } from '../utils/data'
-import ProductCard from '../layouts/ProductCard'
+// import { productItems } from '../utils/data'
+import { ProductCard } from '../utils/helper'
+
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart, addToWishlist } from '../../app/wishCartSlice';
 
 const NewArrivals = () => {
+
+   const dispatch = useDispatch();
+   const allProductItems = useSelector(state => state.wishCartState.items);
 
    const [isCategory, setIsCategory] = useState('All');
 
@@ -13,7 +19,7 @@ const NewArrivals = () => {
       setIsCategory(tabCategory);
    }
 
-   const categoryFilteredItems = productItems.filter(item => item.category.includes(isCategory));
+   const categoryFilteredItems = allProductItems.filter(item => item.category.includes(isCategory));
 
    return (
       <section className="newArrivals">
@@ -47,7 +53,7 @@ const NewArrivals = () => {
                gap={"2rem"} flexWrap={'wrap'}
                direction={{ xs: 'column', md: 'row' }}
             >
-               {(isCategory === "All" ? productItems : categoryFilteredItems)?.map(item => {
+               {(isCategory === "All" ? allProductItems : categoryFilteredItems)?.map(item => {
                   return (<ProductCard
                      key={item.id}
                      stars={item.stars}
@@ -56,6 +62,8 @@ const NewArrivals = () => {
                      imgSrc1={item.imgSrc1}
                      imgSrc11={item.imgSrc11}
                      priceCrossed={item.priceCrossed}
+                     addToCartHandler={() => dispatch(addToCart(item))}
+                     wislistHandler={() => dispatch(addToWishlist(item))}
                   />)
                })}
             </Stack>

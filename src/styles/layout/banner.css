@@ -1,22 +1,4 @@
-@use "../abstracts/helper" as *;
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    visibility: hidden;
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    visibility: visible;
-    transform: translate3d(0);
-  }
-}
-
-.fadeInUp {
-  animation-name: fadeInUp;
-}
+@import "../abstracts/variables.css";
 
 .banner {
   padding: 0 0 6rem;
@@ -77,7 +59,7 @@
       color: white;
       animation-delay: 150ms;
       animation-name: fadeInUp;
-      font-size: $fs-subheading;
+      font-size: var(--fs-subheading);
       text-transform: uppercase;
       animation-duration: 2000ms;
     }

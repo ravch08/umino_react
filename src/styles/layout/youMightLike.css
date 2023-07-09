@@ -1,4 +1,4 @@
-@use "../abstracts/helper" as *;
+@import "../abstracts/variables.css";
 
 .section-heading {
   width: 60%;
@@ -36,12 +36,12 @@
 
   .title {
     font-weight: 600;
-    font-size: $fs-h5;
-    color: $color-Dark-800;
+    font-size: var(--fs-h5);
+    color: var(--color-Dark-800);
     transition: color 0.3s ease-in-out;
 
     &:hover {
-      color: $color-primary;
+      color: var(--color-primary);
     }
   }
 }

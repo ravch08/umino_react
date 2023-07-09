@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigation, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from 'swiper/react';
 

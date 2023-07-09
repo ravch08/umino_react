@@ -1,23 +1,23 @@
-@use "../abstracts/helper" as *;
+@import "../abstracts/variables.css";
 
 .newArrivals {
   .tab-item {
     border: none;
-    font-size: $fs-btn;
+    font-size: var(--fs-btn);
     cursor: pointer;
     font-weight: 400;
     padding: 1.4rem 2.5rem;
-    color: $color-Dark-800;
+    color: var(--color-Dark-800);
     border-radius: 5rem;
     background-color: white;
     transition: background-color 0.3s ease-in-out;
 
     &:hover {
-      background-color: $color-light-400;
+      background-color: var(--color-light-400);
     }
 
     &.active {
-      background-color: $color-light-400;
+      background-color: var(--color-light-400);
     }
   }
 }
@@ -66,6 +66,7 @@
   }
 
   figure {
+    overflow: hidden;
     position: relative;
     border-radius: 1.2rem;
   }
@@ -99,8 +100,10 @@
       border: none;
       cursor: pointer;
       border-radius: 50%;
-      color: $color-Dark-800;
-      @extend .flexRow-center;
+      color: var(--color-Dark-800);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: white;
       transition: background-color 0.3s ease-in-out;
 
@@ -109,7 +112,7 @@
       }
 
       &:hover {
-        background-color: $color-Dark-800;
+        background-color: var(--color-Dark-800);
 
         svg {
           fill: white;
@@ -125,7 +128,7 @@
     background-color: white;
 
     h3 {
-      font-size: $fs-h5;
+      font-size: var(--fs-h5);
     }
 
     .review {
@@ -138,7 +141,7 @@
 
     .priceCrossed {
       font-weight: 600;
-      color: $color-light-800;
+      color: var(--color-light-800);
       text-decoration: line-through;
     }
 

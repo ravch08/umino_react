@@ -1,4 +1,4 @@
-@use "../abstracts/helper" as *;
+@import "../abstracts/variables.css";
 
 .location {
   padding: 0;
@@ -12,11 +12,11 @@
   .address-phone {
     padding: 1.4rem 0;
     font-size: 1.6rem;
-    color: $color-Dark-400;
+    color: var(--color-Dark-400);
     transition: color 0.3s ease-in-out;
 
     &:hover {
-      color: $color-primary;
+      color: var(--color-primary);
     }
   }
 
@@ -44,7 +44,7 @@
       padding: 2rem;
       border-radius: 0.8rem;
       margin-bottom: 4rem;
-      border: 0.1rem solid $color-light-400;
+      border: 0.1rem solid var(--color-light-400);
     }
   }
 }

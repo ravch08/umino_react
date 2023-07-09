@@ -54,8 +54,8 @@ const Footer = () => {
                   <p>Enter your email address to get $10 off your first order and free shipping.Updates information on Sales and Offers.</p>
 
                   <form action="#">
-                     <label htmlFor="email">Email Address</label>
-                     <input type="email" name="email" placeholder='Enter your Email..' />
+                     <label htmlFor="ftr_email">Email Address</label>
+                     <input type="email" name="ftr_email" placeholder='Enter your Email..' />
                      <button type="submit" className='btn btn-light'>SUBSCRIBE</button>
                   </form>
                </div>

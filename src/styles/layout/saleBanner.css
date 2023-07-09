@@ -1,5 +1,3 @@
-@use "../abstracts/helper" as *;
-
 .sales-banner {
   .sales-item {
     position: relative;

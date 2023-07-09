@@ -1,4 +1,4 @@
-@use "../abstracts/helper" as *;
+@import "../abstracts/variables.css";
 
 .blog {
   .blog-item {
@@ -24,17 +24,17 @@
 
     h3 {
       padding: 1.2rem 0;
-      color: $color-Dark-800;
+      color: var(--color-Dark-800);
       transition: color 0.3s ease-in-out;
 
       &:hover {
-        color: $color-primary;
+        color: var(--color-primary);
       }
     }
   }
 
   span {
     font-weight: 600;
-    color: $color-light-800;
+    color: var(--color-light-800);
   }
 }

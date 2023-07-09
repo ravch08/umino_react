@@ -1,4 +1,4 @@
-@use "../abstracts/helper" as *;
+@import "../abstracts/variables.css";
 
 .page-banner {
   padding: 0 0 6rem;
@@ -31,13 +31,13 @@
   }
 
   h3 {
-    font-size: $fs-h4;
+    font-size: var(--fs-h4);
     margin-bottom: 1rem;
   }
 }
 
 .green-banner {
-  background-color: $color-quaternary;
+  background-color: var(--color-quaternary);
 
   .banner-content {
     width: 65%;
@@ -45,9 +45,9 @@
     margin-inline: auto;
 
     p {
-      font-size: $fs-h4;
+      font-size: var(--fs-h4);
       margin-bottom: 3rem;
-      color: $color-tertiary;
+      color: var(--color-tertiary);
     }
 
     span {
