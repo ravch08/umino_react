@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { logoDark } from '../utils/helper';
 
-import { Button, Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
-import { incrementQuantity, decrementQuantity, deleteProduct } from "../../app/wishCartSlice";
+import { incrementQuantity, decrementQuantity, deleteProduct, getCartTotal } from "../../app/wishCartSlice";
 
 const Header = () => {
 
@@ -12,7 +12,7 @@ const Header = () => {
 
 	const [isSticky, setIsSticky] = useState("");
 	const [isCartSidebar, setIsCartSidebar] = useState(false);
-	const { wishCarts, carts, totalCartQuantity } = useSelector(state => state.wishCartState);
+	const { wishCarts, carts, totalPrice, totalCartQuantity } = useSelector(state => state.wishCartState);
 
 	const openCartSidebar = () => setIsCartSidebar(true);
 	const closeCartSidebar = () => setIsCartSidebar(false);
@@ -48,7 +48,7 @@ const Header = () => {
 					</nav>
 
 					<div className="user-info">
-						<button to="#!" className='user-link search'>
+						<button className='user-link search'>
 							<svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path d="M11.9 11.731C11.8 11.731 11.8 11.731 11.9 11.731C11.8 11.8304 11.8 11.8304 11.8 11.8304C11.3 12.3275 10.7 12.7251 9.9 13.0234C9.2 13.3216 8.4 13.4211 7.6 13.4211C6.8 13.4211 6 13.2222 5.3 12.924C4.6 12.6257 4 12.2281 3.4 11.6316C2.9 11.1345 2.4 10.4386 2.1 9.74269C1.8 9.1462 1.7 8.45029 1.7 7.65497C1.7 6.85965 1.9 6.06433 2.2 5.36842C2.5 4.5731 2.9 3.97661 3.4 3.38012C4 2.88304 4.6 2.48538 5.3 2.18713C6 1.88889 6.8 1.69006 7.6 1.69006C8.4 1.69006 9.2 1.88889 9.9 2.18713C10.6 2.48538 11.3 2.88304 11.8 3.47953C12.3 3.97661 12.7 4.67251 13.1 5.36842C13.4 6.06433 13.6 6.76023 13.6 7.65497C13.6 8.45029 13.4 9.24561 13.1 9.94152C12.8 10.538 12.4 11.1345 11.9 11.731ZM16.7 15.4094L13.6 12.3275C14.1 11.6316 14.5 10.9357 14.8 10.1404C15.1 9.34503 15.2 8.45029 15.2 7.55556C15.2 6.46199 15 5.46784 14.6 4.5731C14.2 3.67836 13.7 2.88304 13 2.18713C12.3 1.49123 11.5 0.994152 10.6 0.596491C9.7 0.19883 8.7 0 7.6 0C6.6 0 5.6 0.19883 4.6 0.596491C3.7 0.994152 2.9 1.49123 2.2 2.18713C1.5 2.88304 1 3.67836 0.6 4.67251C0.2 5.56725 0 6.5614 0 7.65497C0 8.64912 0.2 9.64327 0.6 10.6374C1 11.5322 1.6 12.3275 2.3 13.0234C3 13.7193 3.8 14.2164 4.7 14.7134C5.6 15.0117 6.6 15.2105 7.6 15.2105C8.5 15.2105 9.4 15.1111 10.2 14.8129C11 14.5146 11.8 14.117 12.4 13.6199L15.5 16.7018C15.7 16.9006 15.9 17 16.1 17C16.3 17 16.5 16.9006 16.7 16.7018C16.9 16.5029 17 16.3041 17 16.1053C17 15.807 16.9 15.6082 16.7 15.4094Z"></path>
 							</svg>
@@ -65,17 +65,17 @@ const Header = () => {
 							</svg>
 							<div className="badge">{wishCarts.length}</div>
 						</Link>
-						<button to={'#0'} className='user-link cart' onClick={openCartSidebar}>
+						<button className='user-link cart' onClick={openCartSidebar}>
 							<svg width="21" height="17" viewBox="0 0 21 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 								<path d="M14.3699 15.3407C14.1509 15.3407 13.941 15.2535 13.7862 15.0982C13.6314 14.943 13.5444 14.7324 13.5444 14.5128H11.8936C11.8936 15.1715 12.1545 15.8032 12.6189 16.269C13.0832 16.7347 13.7131 16.9964 14.3699 16.9964C15.0266 16.9964 15.6565 16.7347 16.1209 16.269C16.5853 15.8032 16.8462 15.1715 16.8462 14.5128H15.1953C15.1953 14.7324 15.1083 14.943 14.9535 15.0982C14.7987 15.2535 14.5888 15.3407 14.3699 15.3407Z"></path>
 								<path d="M8.5612 15.3407C8.34228 15.3407 8.13233 15.2535 7.97753 15.0982C7.82273 14.943 7.73576 14.7324 7.73576 14.5128H6.07715C6.07715 14.8395 6.14129 15.1629 6.26592 15.4646C6.39055 15.7664 6.57322 16.0406 6.8035 16.2715C7.03378 16.5025 7.30717 16.6857 7.60805 16.8107C7.90893 16.9357 8.23141 17 8.55707 17C8.88274 17 9.20522 16.9357 9.5061 16.8107C9.80698 16.6857 10.0804 16.5025 10.3106 16.2715C10.5409 16.0406 10.7236 15.7664 10.8482 15.4646C10.9729 15.1629 11.037 14.8395 11.037 14.5128H9.38612C9.38612 14.7323 9.29923 14.9428 9.14454 15.098C8.98985 15.2533 8.78003 15.3406 8.5612 15.3407Z"></path>
 								<path d="M19.3299 1.64401C19.2849 1.63633 19.2393 1.63252 19.1937 1.63263H5.9867C5.76778 1.63263 5.55782 1.71985 5.40302 1.8751C5.24823 2.03035 5.16126 2.24092 5.16126 2.46047C5.16126 2.68003 5.24823 2.8906 5.40302 3.04585C5.55782 3.2011 5.76778 3.28832 5.9867 3.28832H18.2192L18.001 4.60149L16.8438 11.5668H6.07595L3.26946 4.60149L1.59537 0.482961C1.50684 0.289212 1.34721 0.13717 1.14972 0.0584856C0.952225 -0.020199 0.732083 -0.0194636 0.535118 0.0605389C0.338153 0.140541 0.179541 0.293646 0.0922992 0.487983C0.00505767 0.682319 -0.00409102 0.902913 0.0667575 1.10384L2.73963 7.68158L4.56385 12.5307C4.6985 12.9389 4.97657 13.2224 5.37794 13.2224H17.5428C17.7383 13.2225 17.9275 13.1531 18.0766 13.0264C18.2258 12.8997 18.3253 12.724 18.3574 12.5307L19.675 4.60149L20.0083 2.59655C20.0443 2.38002 19.993 2.15803 19.8658 1.9794C19.7386 1.80077 19.5458 1.68013 19.3299 1.64401Z"></path>
 							</svg>
-							<div className="badge">{carts.length}</div>
+							<div className="badge">{totalCartQuantity}</div>
 						</button>
 					</div>
 
-					<a href='#!' className={overlayClass} onClick={closeCartSidebar}></a>
+					<button className={overlayClass} onClick={closeCartSidebar}></button>
 
 					{/* Cart Sidebar */}
 					<Stack
@@ -93,14 +93,14 @@ const Header = () => {
 								className="sidebar-header"
 								justifyContent={'space-between'}
 							>
-								<Typography variant='h4' component={"h2"}>Shopping Cart</Typography>
-								<a href="!#" className='sidebar-close' onClick={closeCartSidebar}>
+								<Typography variant='h4' component={"h2"}>Shopping Cart (<span>{totalCartQuantity}</span>)</Typography>
+								<button className='sidebar-close' onClick={closeCartSidebar}>
 									<svg xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 36 36"><title>ic_close_36px</title>
 										<g fill="#212121" className="nc-icon-wrapper">
 											<path d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"></path>
 										</g>
 									</svg>
-								</a>
+								</button>
 							</Stack>
 
 							<div className="sidebar-body">
@@ -122,6 +122,9 @@ const Header = () => {
 
 								<div className='cart-product-list'>
 									{carts.map(item => {
+
+										const productSubtotal = parseFloat((item.price * item.cartQuantity).toFixed(2));
+
 										return (
 											<React.Fragment key={item.id}>
 												<Stack
@@ -135,12 +138,14 @@ const Header = () => {
 														<Stack direction={'column'} justifyContent={'center'}>
 															<Typography variant='h5' component={'h2'}>{item.title}</Typography>
 															<p className='price'><span>Price:</span> ${item.price}</p>
+															<p className='price'><span>SubTotal:</span> ${productSubtotal}</p>
+
 															<Stack
 																spacing={'2rem'}
 																direction={'row'}
 																className="quantity"
 																alignItems={'center'}
-																sx={{ fontSize: '1.5rem' }}
+																sx={{ fontSize: '1.5rem', mt: '1rem' }}
 															>
 																<p className='quantity-label'><span>Quantity:</span> {item.quantity}</p>
 
@@ -184,7 +189,7 @@ const Header = () => {
 								justifyContent={'space-between'}
 							>
 								<span>Sub Total</span>
-								<span>${totalCartQuantity}</span>
+								<span>${totalPrice}</span>
 							</Stack>
 
 							<Stack
@@ -197,7 +202,7 @@ const Header = () => {
 								<span>I agree with the <a href="#!" className='terms'>Terms & Conditions</a></span>
 							</Stack>
 
-							<a href="cart" className='btn btn-dark' onClick={closeCartSidebar}>View Cart</a>
+							<Link to="cart" className='btn btn-dark' onClick={closeCartSidebar}>View Cart</Link>
 						</div>
 					</Stack>
 				</div>

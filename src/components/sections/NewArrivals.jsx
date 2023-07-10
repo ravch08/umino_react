@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Stack } from '@mui/material';
 
-// import { productItems } from '../utils/data'
 import { ProductCard } from '../utils/helper'
 
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, addToWishlist } from '../../app/wishCartSlice';
+import { addToCart, addToWishlist, removeFromWishlist } from '../../app/wishCartSlice';
 
 const NewArrivals = () => {
 
@@ -32,10 +31,10 @@ const NewArrivals = () => {
 
             <Stack
                mb={'4rem'}
-               className="product-tabs"
-               direction={'row'} gap={'1rem'}
-               justifyContent={'center'}
                alignItems={'center'}
+               className="product-tabs"
+               justifyContent={'center'}
+               direction={'row'} gap={'1rem'}
             >
                <button className="tab-item active" onClick={getCategory} data-category="All">ALL</button>
                <button className="tab-item" onClick={getCategory} data-category="Lighting">LIGHTING</button>
@@ -63,7 +62,8 @@ const NewArrivals = () => {
                      imgSrc11={item.imgSrc11}
                      priceCrossed={item.priceCrossed}
                      addToCartHandler={() => dispatch(addToCart(item))}
-                     wislistHandler={() => dispatch(addToWishlist(item))}
+                     addToWislistHandler={() => dispatch(addToWishlist(item))}
+                     removeFromWishlistHandler={() => dispatch(removeFromWishlist(item))}
                   />)
                })}
             </Stack>

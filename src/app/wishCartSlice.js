@@ -7,13 +7,13 @@ const initialState = {
 	totalPrice: 0,
 	items: productItems,
 	totalCartQuantity: 0,
-	totalWishlistQuantity: 0,
 }
 
 const wishCartSlice = createSlice({
 	name: 'cart',
 	initialState,
 	reducers: {
+
 		addToWishlist: (state, action) => {
 			const el = state.wishCarts.findIndex(item => item.id === action.payload.id);
 			if (el >= 0) {
@@ -23,7 +23,7 @@ const wishCartSlice = createSlice({
 			}
 		},
 
-		removeFromWishlist: () => {
+		removeFromWishlist: (state, action) => {
 			state.wishCarts = state.wishCarts.filter((item) => item.id !== action.payload)
 		},
 

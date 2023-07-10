@@ -1,4 +1,7 @@
-import { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useEffect } from "react";
+import { getCartTotal } from "./app/wishCartSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 import { Routes, Route, BrowserRouter, useLocation } from 'react-router-dom';
 
 import { Home, AboutUs, Cart, Category, Contact, Page404, ProductDetail, Wishlist, Login, Register, Header, Footer } from "./components/utils/helper";
@@ -12,6 +15,11 @@ const Wrapper = ({ children }) => {
 };
 
 const App = () => {
+
+  const dispatch = useDispatch();
+  const { carts } = useSelector(state => state.wishCartState);
+
+  useEffect(() => { dispatch(getCartTotal()) }, [carts]);
 
   return (
     <BrowserRouter>
