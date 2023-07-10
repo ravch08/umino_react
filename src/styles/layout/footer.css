@@ -76,7 +76,7 @@ footer {
         border: 0.1rem solid var(--color-light-800);
       }
 
-      .btn {
+      .btn-light {
         padding: 1.6rem 3.5rem;
         border: 0.1rem solid black;
       }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stack } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { categoryItems } from '../utils/data';
 
 const YouMightLike = () => {
@@ -17,7 +18,7 @@ const YouMightLike = () => {
                   return (
                      <div className="category-item" key={item.id}>
                         <figure><img src={item.imgSrc} alt={item.title} /></figure>
-                        <a href="#!" className='title'>{item.title}</a>
+                        <Link to="category:id" className='title'>{item.title}</Link>
                      </div>
                   )
                })}

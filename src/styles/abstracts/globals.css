@@ -78,6 +78,11 @@ a:not(.browser-default) {
   text-decoration: none;
 }
 
+button:not(.browser-default) {
+  border: none;
+  cursor: pointer;
+}
+
 p {
   font-size: var(--fs-body);
 }

@@ -46,8 +46,6 @@ header {
     align-items: center;
 
     button {
-      border: none;
-      cursor: pointer;
       background-color: transparent;
     }
 

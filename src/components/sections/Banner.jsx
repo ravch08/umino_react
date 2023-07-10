@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import 'swiper/css/effect-fade';
 
 import { bannerItems } from '../utils/data';
+import { Link } from "react-router-dom";
 
 const Banner = () => {
 
@@ -54,7 +55,7 @@ const Banner = () => {
                               <span className="superheading">{item.superHeading}</span>
                               <h1>{item.title}</h1>
                               <p>{item.subHeading}</p>
-                              <a href="#!" className='btn btn-light'>EXPLORE NOW</a>
+                              <Link to="#!" className='btn btn-light'>EXPLORE NOW</Link>
                            </div>
                         </div>
                      </SwiperSlide>

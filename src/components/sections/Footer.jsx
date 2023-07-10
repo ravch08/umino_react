@@ -27,25 +27,25 @@ const Footer = () => {
                <div className="footer-list">
                   <span>HOT CATEGORIES</span>
                   <ul className="ftr-list">
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Special Offer</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Performance</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">T-Shirts</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Underwear</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Top Brands</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Online Exclusion</a></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Special Offer</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Performance</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">T-Shirts</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Underwear</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Top Brands</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Online Exclusion</Link></li>
                   </ul>
                </div>
 
                <div className="footer-list">
                   <span>CUSTOMER SERVICE</span>
                   <ul className="ftr-list">
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Privacy Policy</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Refund Policy</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Shipping & Return</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Terms & Condition</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Advanced Search</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Theme FAQs</a></li>
-                     <li className="ftr-item"><a href="#!" className="ftr-link">Store Location</a></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Privacy Policy</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Refund Policy</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Shipping & Return</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Terms & Condition</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Advanced Search</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Theme FAQs</Link></li>
+                     <li className="ftr-item"><Link to="#!" className="ftr-link">Store Location</Link></li>
                   </ul>
                </div>
 

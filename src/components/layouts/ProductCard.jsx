@@ -34,7 +34,7 @@ const ProductCard = (props) => {
                </button>
             </Stack>
 
-            <div className="btn btn-light" onClick={props.addToCartHandler}>ADD TO CART</div>
+            <button className="btn btn-light" onClick={props.addToCartHandler}>ADD TO CART</button>
          </Link>
 
          <div className="product-content">

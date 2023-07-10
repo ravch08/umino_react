@@ -34,7 +34,7 @@ const Register = () => {
                      <p>Your personal data will be used to support your experience throughout this website, to manage access to your account and for other purposes described in our privacy policy.
                      </p>
 
-                     <Link to="#!" type="submit" className="btn btn-dark">CREATE ACCOUNT</Link>
+                     <button type="submit" className="btn btn-dark">CREATE ACCOUNT</button>
                      <Link to="/login" className='btn btn-light'>LOG IN</Link>
                   </form>
                </div>
