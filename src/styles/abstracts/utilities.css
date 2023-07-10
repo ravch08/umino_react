@@ -41,3 +41,17 @@ section {
 .fadeInUp {
   animation-name: fadeInUp;
 }
+
+@keyframes progress {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -60px -60px;
+  }
+}
+
+.progress {
+  animation-name: progress;
+}
