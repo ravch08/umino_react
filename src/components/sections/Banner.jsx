@@ -55,7 +55,7 @@ const Banner = () => {
                               <span className="superheading">{item.superHeading}</span>
                               <h1>{item.title}</h1>
                               <p>{item.subHeading}</p>
-                              <Link to="#!" className='btn btn-light'>EXPLORE NOW</Link>
+                              <Link to="contact" className='btn btn-light'>EXPLORE NOW</Link>
                            </div>
                         </div>
                      </SwiperSlide>

@@ -2,14 +2,6 @@ import {
    category1, category2, category3, category4, category5, category6, salesBanner1, salesBanner2, shipping1, shipping2, shipping3, blog1, blog2, blog3, banner1, banner2, banner1_768, banner2_768, banner1_1024, banner2_1024, banner1_1200, banner2_1200, bannerAboutUs, whychoose1, whychoose2, whychoose3, product1_1, product1_2, product2_1, product2_2, product3_1, product3_2, product4_1, product4_2, product5_1, product5_2, product6_1, product6_2, product7_1, product7_2, product8_1, product8_2, product9_1, product9_2, product10_1, product10_2
 } from "../utils/helper";
 
-// export const svgs = {
-//    iconClose: <svg xmlns="http://www.w3.org/2000/svg" width="16" viewBox="0 0 36 36">
-//       <title>ic_close_36px</title>
-//       <g className="nc-icon-wrapper">
-//          <path d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"></path>
-//       </g>
-//    </svg>
-// };
 
 export const categoryItems = [
    {
