@@ -3,6 +3,7 @@ import { productItems } from "../components/utils/data";
 
 const initialState = {
 	carts: [],
+	userInfo: [],
 	wishCarts: [],
 	totalPrice: 0,
 	items: productItems,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Stack } from '@mui/material';
 
+import { Stack } from '@mui/material';
 import { ProductCard } from '../utils/helper'
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,7 +8,10 @@ import { addToCart, addToWishlist, removeFromWishlist } from '../../app/wishCart
 
 const NewArrivals = () => {
 
+   const categoryAll = [];
    const dispatch = useDispatch();
+
+   const [active, setActive] = useState(false);
    const allProductItems = useSelector(state => state.wishCartState.items);
 
    const [isCategory, setIsCategory] = useState('All');
@@ -16,8 +19,15 @@ const NewArrivals = () => {
    const getCategory = (e) => {
       const tabCategory = e.target.dataset.category;
       setIsCategory(tabCategory);
+      setActive(!active);
    }
 
+   const categoryArray = allProductItems.map(item => item.category);
+   categoryArray.map(innerArray => {
+      innerArray.map(item => categoryAll.push(item));
+   })
+
+   const filteredCategories = ['All', ...new Set(categoryAll)]
    const categoryFilteredItems = allProductItems.filter(item => item.category.includes(isCategory));
 
    return (
@@ -36,13 +46,17 @@ const NewArrivals = () => {
                justifyContent={'center'}
                direction={'row'} gap={'1rem'}
             >
-               <button className="tab-item active" onClick={getCategory} data-category="All">ALL</button>
-               <button className="tab-item" onClick={getCategory} data-category="Lighting">LIGHTING</button>
-               <button className="tab-item" onClick={getCategory} data-category="Bedroom">BEDROOM</button>
-               <button className="tab-item" onClick={getCategory} data-category="Bathroom">BATHROOM</button>
-               <button className="tab-item" onClick={getCategory} data-category="Sofa">SOFA</button>
-               <button className="tab-item" onClick={getCategory} data-category="Outdoor">OUTDOOR</button>
-               <button className="tab-item" onClick={getCategory} data-category="Home Kitchen">HOME KITCHEN</button>
+
+               {filteredCategories?.map((item, idx) => {
+                  return (
+                     <button
+                        key={idx}
+                        data-category={item}
+                        onClick={getCategory}
+                        className={isCategory === item ? 'active tab-item' : 'tab-item'}
+                     > {item} </button>
+                  )
+               })}
             </Stack>
 
             <Stack
