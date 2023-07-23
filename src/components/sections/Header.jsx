@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { logoDark } from '../utils/helper';
 
 import { Stack, Typography } from '@mui/material';
@@ -39,11 +39,11 @@ const Header = () => {
 
 					<nav>
 						<ul className="nav-list">
-							<li className="nav-item"><Link to="/" className="nav-link">HOME</Link></li>
-							<li className="nav-item"><Link to="aboutUs" className="nav-link">ABOUT US</Link></li>
-							<li className="nav-item"><Link to="#!" className="nav-link">SHOP</Link></li>
-							<li className="nav-item"><Link to="#!" className="nav-link">BLOG</Link></li>
-							<li className="nav-item"><Link to="contact" className="nav-link">CONTACT</Link></li>
+							<li className="nav-item"><NavLink to="/" className="nav-link">HOME</NavLink></li>
+							<li className="nav-item"><NavLink to="aboutUs" className="nav-link">ABOUT US</NavLink></li>
+							<li className="nav-item"><NavLink to="shop" className="nav-link">SHOP</NavLink></li>
+							<li className="nav-item"><NavLink to="blog" className="nav-link">BLOG</NavLink></li>
+							<li className="nav-item"><NavLink to="contact" className="nav-link">CONTACT</NavLink></li>
 						</ul>
 					</nav>
 

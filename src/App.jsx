@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Routes, Route, BrowserRouter, useLocation } from 'react-router-dom';
 
-import { Home, AboutUs, Cart, Category, Contact, Page404, ProductDetail, Wishlist, Login, Register, Header, Footer } from "./components/utils/helper";
+import { Home, AboutUs, Cart, Shop, BlogPage, Category, Contact, Page404, ProductDetail, Wishlist, Login, Register, Header, Footer } from "./components/utils/helper";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -30,6 +30,8 @@ const App = () => {
           <Route path="cart" element={<Cart />} />
           <Route path="login" element={<Login />} />
           <Route path="aboutUs" element={<AboutUs />} />
+          <Route path="shop" element={<Shop />} />
+          <Route path="blog" element={<BlogPage />} />
           <Route path="contact" element={<Contact />} />
           <Route path="register" element={<Register />} />
           <Route path="wishlist" element={<Wishlist />} />
