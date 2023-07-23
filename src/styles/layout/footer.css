@@ -70,8 +70,9 @@ footer {
 
       input[type="email"] {
         padding: 1.6rem;
-        width: 80%;
+        width: 85%;
         border-radius: 5rem;
+        color: white;
         background-color: transparent;
         border: 0.1rem solid var(--color-light-800);
       }
@@ -86,6 +87,15 @@ footer {
       width: 35%;
     }
   }
+  .form-control {
+    margin-bottom: 2rem;
+  }
+}
+
+.form-error {
+  color: red;
+  margin-left: 1rem;
+  font-size: var(--fs-topbar);
 }
 
 .social-icons {

@@ -26,6 +26,10 @@
 }
 
 .form {
+  .form-control {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
   .contact-form {
     width: 80%;
     margin-inline: auto;
@@ -36,7 +40,7 @@
 
     input[type="text"],
     input[type="email"] {
-      width: 50%;
+      width: 100%;
       border-radius: 0.8rem;
     }
 
