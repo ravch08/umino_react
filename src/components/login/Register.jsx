@@ -1,4 +1,6 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import { Typography, Stack } from '@mui/material';
 
@@ -9,11 +11,34 @@ import { PageBanner, bannerRegister } from "../utils/helper";
 
 const Register = () => {
 
+	// const API_KEY = process.env.VITE_API_KEY;
+	// using VITE as build tool, so process is not available
+
+	const API_KEY = import.meta.env.VITE_API_KEY;
+	const API_URL = new URL(`https://identitytoolkit.googleapis.com/v1/accounts:signUp`)
+	API_URL.searchParams.set('key', API_KEY);
+
+	const url = API_URL.toString();
+
+	const [isLogin, setIsLogin] = useState(false);
 	const { register, reset, handleSubmit, control, formState: { errors } } = useForm();
 
 	const registerHandler = data => {
-		console.log("User Logged in!", data);
+		setIsLogin(prevState => !prevState);
+		console.log("User Logged in!", data.registerEmail);
 		reset();
+
+		if (isLogin) {
+
+		} else {
+			axios.post(url, {
+				email: data.registerEmail,
+				password: data.registerPassword,
+				returnSecureToken: true,
+			}).then((response) => {
+				console.log(response.status);
+			});
+		}
 	}
 
 	return (
@@ -38,7 +63,7 @@ const Register = () => {
 									value: true,
 									message: "FirstName must have atleast 6 letters & atmost 20 letters "
 								},
-								minLength: 6,
+								minLength: 4,
 								maxLength: 20
 							})} />
 
@@ -51,7 +76,7 @@ const Register = () => {
 									value: true,
 									message: "LastName must have atleast 6 letters & atmost 20 letters "
 								},
-								minLength: 6,
+								minLength: 4,
 								maxLength: 20
 							})} />
 
