@@ -18,6 +18,7 @@ const Contact = () => {
 
 	return (
 		<main>
+
 			<Location />
 			<section className="contactInfo" aria-labelledby='Contact Information'>
 				<div className="container">

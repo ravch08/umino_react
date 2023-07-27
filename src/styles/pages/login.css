@@ -10,6 +10,11 @@
     p {
       margin-bottom: 4rem;
     }
+
+    .form-error {
+      margin-bottom: 1rem;
+    }
+
     .btn {
       width: 100%;
       text-align: center;
@@ -23,6 +28,10 @@
     margin: 0 auto;
     p {
       margin-bottom: 4rem;
+    }
+
+    .form-error {
+      margin-bottom: 1rem;
     }
 
     .btn-dark {
