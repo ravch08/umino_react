@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { logoDark } from '../utils/helper';
 
 import { Stack, Typography } from '@mui/material';
-import { useSelector, useDispatch } from 'react-redux';
-import { incrementQuantity, decrementQuantity, deleteProduct, getCartTotal } from "../../app/wishCartSlice";
+import { useDispatch, useSelector } from 'react-redux';
+import { decrementQuantity, deleteProduct, incrementQuantity } from "../../app/wishCartSlice";
 
 const Header = () => {
 

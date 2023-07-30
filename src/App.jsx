@@ -1,10 +1,10 @@
-import React, { useLayoutEffect, useEffect } from "react";
-import { getCartTotal } from "./app/wishCartSlice";
+import React, { useEffect, useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getCartTotal } from "./app/wishCartSlice";
 
-import { Routes, Route, BrowserRouter, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 
-import { Home, AboutUs, Cart, Shop, BlogPage, Category, Contact, Page404, ProductDetail, Wishlist, Login, Register, Header, Footer } from "./components/utils/helper";
+import { AboutUs, BlogPage, Cart, Category, Contact, Footer, Header, Home, Login, Page404, ProductDetail, Register, Shop, Wishlist } from "./components/utils/helper";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();

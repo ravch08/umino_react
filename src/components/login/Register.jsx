@@ -1,8 +1,8 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 
+import { Stack, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { Typography, Stack } from '@mui/material';
 
 import { DevTool } from "@hookform/devtools";
 import { useForm } from "react-hook-form";
@@ -20,7 +20,6 @@ const Register = () => {
 
 	const url = API_URL.toString();
 
-	const [isLogin, setIsLogin] = useState(false);
 	const { register, reset, handleSubmit, control, formState: { errors } } = useForm();
 
 	const registerHandler = data => {
@@ -28,17 +27,14 @@ const Register = () => {
 		console.log("User Logged in!", data.registerEmail);
 		reset();
 
-		if (isLogin) {
+		axios.post(url, {
+			email: data.registerEmail,
+			password: data.registerPassword,
+			returnSecureToken: true,
+		}).then((response) => {
+			console.log(response.status);
+		});
 
-		} else {
-			axios.post(url, {
-				email: data.registerEmail,
-				password: data.registerPassword,
-				returnSecureToken: true,
-			}).then((response) => {
-				console.log(response.status);
-			});
-		}
 	}
 
 	return (

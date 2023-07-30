@@ -1,10 +1,10 @@
-import React from "react";
 import { Stack, Typography } from "@mui/material";
+import React from "react";
 
-import { bannerLogin, PageBanner } from "../utils/helper";
 import { DevTool } from "@hookform/devtools";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { bannerLogin, PageBanner } from "../utils/helper";
 
 const Login = () => {
 
@@ -75,6 +75,7 @@ const Login = () => {
 							<p>Sign up for early Sale access plus tailored new arrivals, trends and promotions. To opt out, click unsubscribe in our emails.</p>
 							<Link to="/register" className="btn btn-dark">CREATE ACCOUNT</Link>
 						</div>
+
 					</Stack>
 				</div>
 			</section>
