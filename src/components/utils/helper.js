@@ -52,6 +52,7 @@ export { default as whychoose3 } from "../../assets/banner-about-3.webp";
 export { default as bannerAboutUs } from "../../assets/banner_aboutus.jpg";
 export { default as bannerBlogs } from "../../assets/banner_blogs.jpg";
 export { default as bannerCart } from "../../assets/banner_cart.jpg";
+export { default as bannerCategory } from "../../assets/banner_categories.jpg";
 export { default as bannerLogin } from "../../assets/banner_login.jpg";
 export { default as bannerRegister } from "../../assets/banner_register.jpg";
 export { default as bannerShop } from "../../assets/banner_shop.jpg";
