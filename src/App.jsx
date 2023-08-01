@@ -4,7 +4,7 @@ import { getCartTotal } from "./app/wishCartSlice";
 
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 
-import { AboutUs, BlogPage, Cart, Category, Contact, Footer, Header, Home, Login, Page404, ProductDetail, Register, Shop, Wishlist } from "./components/utils/helper";
+import { AboutUs, BlogPage, Cart, Categories, CategoryDetail, Contact, Footer, Header, Home, Login, Page404, ProductDetail, Register, Shop, Wishlist } from "./components/utils/helper";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -35,8 +35,9 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="register" element={<Register />} />
           <Route path="wishlist" element={<Wishlist />} />
-          <Route path="category:id" element={<Category />} />
-          <Route path="product:id" element={<ProductDetail />} />
+          <Route path="categories" element={<Categories />} />
+          <Route path="categories/:categoryID" element={<CategoryDetail />} />
+          <Route path="product/:productID" element={<ProductDetail />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
         <Footer />

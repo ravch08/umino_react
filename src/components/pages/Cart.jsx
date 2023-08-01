@@ -1,14 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Box, Stack } from '@mui/material';
-
-import { useSelector, useDispatch } from 'react-redux';
 import { PageBanner, bannerCart } from "../utils/helper";
 
 const Cart = () => {
 
-	const dispatch = useDispatch();
-	const { carts, totalPrice, totalCartQuantity } = useSelector(state => state.wishCartState);
+	// const dispatch = useDispatch();
+	// const { carts, totalPrice, totalCartQuantity } = useSelector(state => state.wishCartState);
 
 	return (
 		<main>
@@ -22,7 +18,7 @@ const Cart = () => {
 
 			<section className="cart-page" aria-labelledby='Cart Page'>
 				<div className='container'>
-					<Stack direction={'row'} spacing={'2rem'} justifyContent={'space-between'}>
+					{/* <Stack direction={'row'} spacing={'2rem'} justifyContent={'space-between'}>
 
 						<Box className="cart-totals">
 							<div className="cart-header">Cart Totals</div>
@@ -46,7 +42,7 @@ const Cart = () => {
 
 							<Link to="#!" className='btn btn-cart'>Checkout</Link>
 						</Box>
-					</Stack>
+					</Stack> */}
 				</div>
 			</section>
 		</main>

@@ -1,9 +1,9 @@
-import React from 'react';
 import { Stack } from '@mui/material';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageBanner, bannerWishlist, ProductCard } from "../utils/helper";
+import { PageBanner, ProductCard, bannerWishlist } from "../utils/helper";
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeFromWishlist } from '../../app/wishCartSlice';
 
 const Wishlist = () => {

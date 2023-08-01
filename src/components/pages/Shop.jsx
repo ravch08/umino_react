@@ -1,5 +1,5 @@
-import React from 'react'
-import { bannerShop, PageBanner, Clients } from '../utils/helper'
+import React from 'react';
+import { Clients, PageBanner, bannerShop } from '../utils/helper';
 
 const Shop = () => {
 

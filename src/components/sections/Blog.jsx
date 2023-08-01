@@ -27,7 +27,7 @@ const Blog = () => {
 									width: { xs: '100%', md: '45%', lg: '30%' },
 								}}
 							>
-								<figure><img src={item.imgSrc} alt={item.title} /></figure>
+								<figure><img src={item.imgSrc} loading='lazy' alt={item.title} /></figure>
 
 								<div className="blog-content">
 									<span>{item.category}</span>

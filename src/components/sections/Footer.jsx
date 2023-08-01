@@ -1,11 +1,11 @@
-import React from 'react';
 import { Stack } from '@mui/material';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { useForm } from "react-hook-form";
 import { DevTool } from '@hookform/devtools';
+import { useForm } from "react-hook-form";
 
-import { logoLight, SocialIcons, ScrollTop } from '../utils/helper';
+import { ScrollTop, SocialIcons, logoLight } from '../utils/helper';
 
 const Footer = () => {
 
@@ -27,7 +27,7 @@ const Footer = () => {
 					direction={{ xs: 'column', md: 'row' }}
 				>
 					<div className="footer-item">
-						<Link to="/"><img src={logoLight} width='120px' alt="umino" /></Link>
+						<Link to="/"><img src={logoLight} loading='lazy' width='120px' alt="umino" /></Link>
 						<span className="address">268 St, South New York/NY 98944, <br /> United States.</span>
 						<a href="tel:+222-1800-2628">+222-1800-2628</a>
 						<a href="mailto:blueskytechcompany@gmail.com">blueskytechcompany@gmail.com</a>

@@ -1,9 +1,9 @@
-import React from 'react'
-import { Location } from "../utils/helper";
 import { Stack, Typography } from '@mui/material';
+import React from 'react';
+import { Location } from "../utils/helper";
 
-import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
+import { useForm } from 'react-hook-form';
 
 import { contactAddressItems } from "../utils/data";
 

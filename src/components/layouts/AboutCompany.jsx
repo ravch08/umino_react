@@ -1,5 +1,5 @@
-import React from 'react';
 import { Stack } from '@mui/material';
+import React from 'react';
 
 import { ourCompany } from "../utils/helper";
 
@@ -24,7 +24,7 @@ const AboutCompany = () => {
                      We spend months finding the best factories around the world—the same ones that produce your favorite designer labels. We visit them often and build strong personal relationships with the owners.
                   </p>
                </div>
-               <figure><img src={ourCompany} alt="Story About Us" /></figure>
+               <figure><img src={ourCompany} loading='lazy' alt="Story About Us" /></figure>
             </Stack>
          </div >
       </section >

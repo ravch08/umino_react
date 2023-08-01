@@ -1,5 +1,5 @@
 import React from 'react';
-import { bannerAboutUs, PageBanner, AboutCompany, WhyChoose, GreenBanner, Clients } from '../utils/helper';
+import { AboutCompany, Clients, GreenBanner, PageBanner, WhyChoose, bannerAboutUs } from '../utils/helper';
 
 const AboutUs = () => {
 

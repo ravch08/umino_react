@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageBanner, bannerBlogs, Clients } from "../utils/helper";
+import { Clients, PageBanner, bannerBlogs } from "../utils/helper";
 
 const BlogPage = () => {
 
