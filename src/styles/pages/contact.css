@@ -1,54 +1,52 @@
-@import "../abstracts/variables.css";
-
 .location {
-  padding: 0;
+	padding: 0;
 }
 
 .contactInfo {
-  .address-item {
-    flex-basis: 30%;
-  }
+	.address-item {
+		flex-basis: 30%;
+	}
 
-  .address-phone {
-    padding: 1.4rem 0;
-    font-size: 1.6rem;
-    color: var(--color-Dark-400);
-    transition: color 0.3s ease-in-out;
+	.address-phone {
+		padding: 1.4rem 0;
+		font-size: 1.6rem;
+		color: var(--color-Dark-400);
+		transition: color 0.3s ease-in-out;
 
-    &:hover {
-      color: var(--color-primary);
-    }
-  }
+		&:hover {
+			color: var(--color-primary);
+		}
+	}
 
-  span {
-    font-weight: 600;
-  }
+	span {
+		font-weight: 600;
+	}
 }
 
 .form {
-  .form-control {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  .contact-form {
-    width: 80%;
-    margin-inline: auto;
+	.form-control {
+		width: 100%;
+		margin-bottom: 2rem;
+	}
+	.contact-form {
+		width: 80%;
+		margin-inline: auto;
 
-    label {
-      display: none;
-    }
+		label {
+			display: none;
+		}
 
-    input[type="text"],
-    input[type="email"] {
-      width: 100%;
-      border-radius: 0.8rem;
-    }
+		input[type="text"],
+		input[type="email"] {
+			width: 100%;
+			border-radius: 0.8rem;
+		}
 
-    textarea {
-      padding: 2rem;
-      border-radius: 0.8rem;
-      margin-bottom: 4rem;
-      border: 0.1rem solid var(--color-light-400);
-    }
-  }
+		textarea {
+			padding: 2rem;
+			border-radius: 0.8rem;
+			margin-bottom: 4rem;
+			border: 0.1rem solid var(--color-light-400);
+		}
+	}
 }

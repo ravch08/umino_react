@@ -1,49 +1,45 @@
-@import "../abstracts/variables.css";
-
 .btn {
-  font-size: var(--fs-btn);
-  border-radius: 8rem;
-  padding: 1.6rem 6rem;
-  display: inline-block;
+	font-size: var(--fs-btn);
+	border-radius: 8rem;
+	padding: 1.6rem 6rem;
+	display: inline-block;
 }
 
 .btn-text {
-  font-style: italic;
-  color: var(--color-Dark-800);
-  transition: color 0.3s ease-in-out;
+	font-style: italic;
+	color: var(--color-Dark-800);
+	transition: color 0.3s ease-in-out;
 
-  &:hover {
-    color: var(--color-primary);
-  }
+	&:hover {
+		color: var(--color-primary);
+	}
 }
 
 .btn-dark {
-  border: none;
-  cursor: pointer;
-  color: white;
-  background-color: var(--color-Dark-800);
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
+	border: none;
+	cursor: pointer;
+	color: white;
+	background-color: var(--color-Dark-800);
+	transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
-  &:hover {
-    color: var(--color-Dark-800);
-    background-color: white;
-    box-shadow: var(--box-shadow-md);
-  }
+	&:hover {
+		color: var(--color-Dark-800);
+		background-color: white;
+		box-shadow: var(--box-shadow-md);
+	}
 }
 
 .btn-light {
-  cursor: pointer;
-  color: var(--color-Dark-800);
-  background-color: white;
-  border: 0.1rem solid var(--color-light-400);
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
+	cursor: pointer;
+	color: var(--color-Dark-800);
+	background-color: white;
+	border: 0.1rem solid var(--color-light-400);
+	transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
-  &:hover {
-    color: white;
-    box-shadow: var(--box-shadow-md);
-    border: 0.1rem solid transparent;
-    background-color: var(--color-Dark-800);
-  }
+	&:hover {
+		color: white;
+		box-shadow: var(--box-shadow-md);
+		border: 0.1rem solid transparent;
+		background-color: var(--color-Dark-800);
+	}
 }

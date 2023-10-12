@@ -1,29 +1,27 @@
-@import "../abstracts/variables.css";
-
 .shipping {
-  padding: 5rem 0 8rem;
-  position: relative;
+	padding: 5rem 0 8rem;
+	position: relative;
 
-  &::after {
-    content: "";
-    width: 80%;
-    height: 0.1rem;
-    display: block;
-    margin: 0 auto;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-    background-color: #0000001a;
-  }
+	&::after {
+		content: "";
+		width: 80%;
+		height: 0.1rem;
+		display: block;
+		margin: 0 auto;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%);
+		background-color: #0000001a;
+	}
 
-  .shipping-item {
-    text-align: center;
+	.shipping-item {
+		text-align: center;
 
-    h2 {
-      font-weight: 600;
-      font-size: var(--fs-h4);
-      padding: 1.6rem 0;
-    }
-  }
+		h2 {
+			font-weight: 600;
+			font-size: var(--fs-h4);
+			padding: 1.6rem 0;
+		}
+	}
 }

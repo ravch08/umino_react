@@ -1,47 +1,45 @@
-@import "../abstracts/variables.css";
-
 .section-heading {
-  width: 60%;
-  text-align: center;
-  margin-bottom: 4rem;
-  margin-inline: auto;
+	width: 60%;
+	text-align: center;
+	margin-bottom: 4rem;
+	margin-inline: auto;
 
-  h2 {
-    margin-bottom: 1.5rem;
-  }
+	h2 {
+		margin-bottom: 1.5rem;
+	}
 }
 
 .you-might-like {
-  .category-item {
-    text-align: center;
+	.category-item {
+		text-align: center;
 
-    &:hover img {
-      transform: scale(1.1);
-    }
-  }
+		&:hover img {
+			transform: scale(1.1);
+		}
+	}
 
-  figure {
-    width: 15rem;
-    height: 15rem;
-    overflow: hidden;
-    object-fit: cover;
-    margin-bottom: 2rem;
-    border-radius: 50%;
+	figure {
+		width: 15rem;
+		height: 15rem;
+		overflow: hidden;
+		object-fit: cover;
+		margin-bottom: 2rem;
+		border-radius: 50%;
 
-    img {
-      transform: scale(1);
-      transition: transform 0.3s ease-in-out;
-    }
-  }
+		img {
+			transform: scale(1);
+			transition: transform 0.3s ease-in-out;
+		}
+	}
 
-  .title {
-    font-weight: 600;
-    font-size: var(--fs-h5);
-    color: var(--color-Dark-800);
-    transition: color 0.3s ease-in-out;
+	.title {
+		font-weight: 600;
+		font-size: var(--fs-h5);
+		color: var(--color-Dark-800);
+		transition: color 0.3s ease-in-out;
 
-    &:hover {
-      color: var(--color-primary);
-    }
-  }
+		&:hover {
+			color: var(--color-primary);
+		}
+	}
 }

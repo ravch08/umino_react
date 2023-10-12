@@ -1,77 +1,75 @@
-@import "../abstracts/variables.css";
-
 .login-form {
-  .form {
-    flex-basis: 45%;
-  }
-  .new-customer {
-    flex-basis: 45%;
+	.form {
+		flex-basis: 45%;
+	}
+	.new-customer {
+		flex-basis: 45%;
 
-    p {
-      margin-bottom: 4rem;
-    }
+		p {
+			margin-bottom: 4rem;
+		}
 
-    .form-error {
-      margin-bottom: 1rem;
-    }
+		.form-error {
+			margin-bottom: 1rem;
+		}
 
-    .btn {
-      width: 100%;
-      text-align: center;
-    }
-  }
+		.btn {
+			width: 100%;
+			text-align: center;
+		}
+	}
 }
 
 .register {
-  .form {
-    width: 60%;
-    margin: 0 auto;
-    p {
-      margin-bottom: 4rem;
-    }
+	.form {
+		width: 60%;
+		margin: 0 auto;
+		p {
+			margin-bottom: 4rem;
+		}
 
-    .form-error {
-      margin-bottom: 1rem;
-    }
+		.form-error {
+			margin-bottom: 1rem;
+		}
 
-    .btn-dark {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+		.btn-dark {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
 
-    .btn-light {
-      text-align: center;
-    }
-  }
+		.btn-light {
+			text-align: center;
+		}
+	}
 }
 
 .form {
-  form {
-    display: flex;
-    flex-direction: column;
+	form {
+		display: flex;
+		flex-direction: column;
 
-    label {
-      font-size: var(--fs-h4);
-      margin-bottom: 1rem;
-      color: var(--color-Dark-400);
+		label {
+			font-size: var(--fs-h4);
+			margin-bottom: 1rem;
+			color: var(--color-Dark-400);
 
-      span {
-        color: red;
-      }
-    }
+			span {
+				color: red;
+			}
+		}
 
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      padding: 1.5rem;
-      border-radius: 4rem;
-      margin-bottom: 2.5rem;
-      border: 0.1rem solid var(--color-light-400);
-    }
+		input[type="text"],
+		input[type="email"],
+		input[type="password"] {
+			padding: 1.5rem;
+			border-radius: 4rem;
+			margin-bottom: 2.5rem;
+			border: 0.1rem solid var(--color-light-400);
+		}
 
-    .forgotPassword {
-      margin-bottom: 4rem;
-      color: var(--color-Dark-800);
-    }
-  }
+		.forgotPassword {
+			margin-bottom: 4rem;
+			color: var(--color-Dark-800);
+		}
+	}
 }

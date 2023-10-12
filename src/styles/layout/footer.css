@@ -1,161 +1,159 @@
-@import "../abstracts/variables.css";
-
 footer {
-  width: 95%;
-  padding: 8rem 0;
-  border-radius: 1.2rem;
-  margin-inline: auto;
-  margin-bottom: 2rem;
-  color: var(--color-light-800);
-  background-color: var(--color-footer);
+	width: 95%;
+	padding: 8rem 0;
+	border-radius: 1.2rem;
+	margin-inline: auto;
+	margin-bottom: 2rem;
+	color: var(--color-light-800);
+	background-color: var(--color-footer);
 
-  .footer-item {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+	.footer-item {
+		width: 25%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
 
-    span {
-      padding: 1.6rem 0;
-    }
+		span {
+			padding: 1.6rem 0;
+		}
 
-    a {
-      padding: 0.6rem 0;
-      color: var(--color-light-800);
-      transition: color 0.3s ease-in-out;
+		a {
+			padding: 0.6rem 0;
+			color: var(--color-light-800);
+			transition: color 0.3s ease-in-out;
 
-      &:hover {
-        color: white;
-      }
-    }
-  }
+			&:hover {
+				color: white;
+			}
+		}
+	}
 
-  .footer-list {
-    width: 20%;
+	.footer-list {
+		width: 20%;
 
-    span {
-      color: white;
-      font-weight: 600;
-    }
+		span {
+			color: white;
+			font-weight: 600;
+		}
 
-    .ftr-list {
-      margin-top: 2rem;
-    }
+		.ftr-list {
+			margin-top: 2rem;
+		}
 
-    .ftr-item {
-      display: flex;
-    }
+		.ftr-item {
+			display: flex;
+		}
 
-    .ftr-link {
-      padding: 0.6rem 0;
-      color: var(--color-light-800);
-      transition: color 0.3s ease-in-out;
+		.ftr-link {
+			padding: 0.6rem 0;
+			color: var(--color-light-800);
+			transition: color 0.3s ease-in-out;
 
-      &:hover {
-        color: white;
-      }
-    }
+			&:hover {
+				color: white;
+			}
+		}
 
-    p {
-      margin: 2rem 0 3rem;
-    }
+		p {
+			margin: 2rem 0 3rem;
+		}
 
-    form {
-      gap: 1rem;
-      display: flex;
+		form {
+			gap: 1rem;
+			display: flex;
 
-      label {
-        display: none;
-      }
+			label {
+				display: none;
+			}
 
-      input[type="email"] {
-        padding: 1.6rem;
-        width: 85%;
-        border-radius: 5rem;
-        color: white;
-        background-color: transparent;
-        border: 0.1rem solid var(--color-light-800);
-      }
+			input[type="email"] {
+				padding: 1.6rem;
+				width: 85%;
+				border-radius: 5rem;
+				color: white;
+				background-color: transparent;
+				border: 0.1rem solid var(--color-light-800);
+			}
 
-      .btn-light {
-        padding: 1.6rem 3.5rem;
-        border: 0.1rem solid black;
-      }
-    }
+			.btn-light {
+				padding: 1.6rem 3.5rem;
+				border: 0.1rem solid black;
+			}
+		}
 
-    &:last-of-type {
-      width: 35%;
-    }
-  }
-  .form-control {
-    margin-bottom: 2rem;
-  }
+		&:last-of-type {
+			width: 35%;
+		}
+	}
+	.form-control {
+		margin-bottom: 2rem;
+	}
 }
 
 .form-error {
-  color: red;
-  margin-left: 1rem;
-  font-size: var(--fs-topbar);
+	color: red;
+	margin-left: 1rem;
+	font-size: var(--fs-topbar);
 }
 
 .social-icons {
-  margin-top: 3rem;
+	margin-top: 3rem;
 
-  .social-icon {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: border 0.3s ease-in-out;
-    border: 0.1rem solid var(--color-light-800);
+	.social-icon {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: border 0.3s ease-in-out;
+		border: 0.1rem solid var(--color-light-800);
 
-    svg {
-      fill: var(--color-light-800);
-      transition: fill 0.3s ease-in-out;
-    }
+		svg {
+			fill: var(--color-light-800);
+			transition: fill 0.3s ease-in-out;
+		}
 
-    &:hover {
-      border-color: white;
+		&:hover {
+			border-color: white;
 
-      svg {
-        fill: white;
-      }
-    }
-  }
+			svg {
+				fill: white;
+			}
+		}
+	}
 }
 
 .scrollToTop {
-  right: 3%;
-  bottom: 3%;
-  width: 5rem;
-  height: 5rem;
-  z-index: 90;
-  position: fixed;
-  cursor: pointer;
-  border-radius: 50%;
-  transform: scale(0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	right: 3%;
+	bottom: 3%;
+	width: 5rem;
+	height: 5rem;
+	z-index: 90;
+	position: fixed;
+	cursor: pointer;
+	border-radius: 50%;
+	transform: scale(0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-  border: 0.1rem solid white;
-  box-shadow: var(--box-shadow-md);
-  background-color: var(--color-Dark-800);
-  transition: transform 0.6s ease-in-out, background-color 0.3s ease-in-out;
+	border: 0.1rem solid white;
+	box-shadow: var(--box-shadow-md);
+	background-color: var(--color-Dark-800);
+	transition: transform 0.6s ease-in-out, background-color 0.3s ease-in-out;
 
-  &:hover {
-    background-color: var(--color-Dark-800);
-  }
+	&:hover {
+		background-color: var(--color-Dark-800);
+	}
 
-  svg {
-    fill: white;
-  }
+	svg {
+		fill: white;
+	}
 
-  &.show {
-    transform: scale(1);
-  }
+	&.show {
+		transform: scale(1);
+	}
 }
 
 /* // @media screen and (max-width: 991px) {

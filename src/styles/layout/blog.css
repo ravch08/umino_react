@@ -1,40 +1,38 @@
-@import "../abstracts/variables.css";
-
 .blog {
-  .blog-item {
-    &:hover img {
-      transform: scale(1.1);
-    }
-  }
+	.blog-item {
+		&:hover img {
+			transform: scale(1.1);
+		}
+	}
 
-  figure {
-    overflow: hidden;
-    border-radius: 0.8rem;
-  }
+	figure {
+		overflow: hidden;
+		border-radius: 0.8rem;
+	}
 
-  img {
-    width: 100%;
-    transform: scale(1);
-    border-radius: 0.8rem;
-    transition: transform 0.3s ease-in-out;
-  }
+	img {
+		width: 100%;
+		transform: scale(1);
+		border-radius: 0.8rem;
+		transition: transform 0.3s ease-in-out;
+	}
 
-  .blog-content {
-    padding: 1.8rem 0.3rem;
+	.blog-content {
+		padding: 1.8rem 0.3rem;
 
-    h3 {
-      padding: 1.2rem 0;
-      color: var(--color-Dark-800);
-      transition: color 0.3s ease-in-out;
+		h3 {
+			padding: 1.2rem 0;
+			color: var(--color-Dark-800);
+			transition: color 0.3s ease-in-out;
 
-      &:hover {
-        color: var(--color-primary);
-      }
-    }
-  }
+			&:hover {
+				color: var(--color-primary);
+			}
+		}
+	}
 
-  span {
-    font-weight: 600;
-    color: var(--color-light-800);
-  }
+	span {
+		font-weight: 600;
+		color: var(--color-light-800);
+	}
 }

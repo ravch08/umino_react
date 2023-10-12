@@ -1,42 +1,40 @@
-@import "../abstracts/variables.css";
-
 .cart-totals {
-  width: 25%;
-  padding: 2rem;
-  height: fit-content;
-  position: sticky;
-  top: 12%;
-  font-size: var(--fs-h5);
-  border: 0.1rem solid #00000033;
+	width: 25%;
+	padding: 2rem;
+	height: fit-content;
+	position: sticky;
+	top: 12%;
+	font-size: var(--fs-h5);
+	border: 0.1rem solid #00000033;
 
-  .cart-header {
-    padding: 1rem 0;
-    font-weight: bold;
-    font-size: var(--fs-h4);
-    border-bottom: 0.1rem solid #00000033;
-  }
+	.cart-header {
+		padding: 1rem 0;
+		font-weight: bold;
+		font-size: var(--fs-h4);
+		border-bottom: 0.1rem solid #00000033;
+	}
 
-  .subtotal {
-    padding: 2.5rem 1rem 2rem 1rem;
-    border-bottom: 0.1rem solid #00000033;
-  }
+	.subtotal {
+		padding: 2.5rem 1rem 2rem 1rem;
+		border-bottom: 0.1rem solid #00000033;
+	}
 
-  .shipping {
-    padding: 2.5rem 1rem 2rem 1rem;
-    border-bottom: 0.1rem solid #00000033;
-  }
+	.shipping {
+		padding: 2.5rem 1rem 2rem 1rem;
+		border-bottom: 0.1rem solid #00000033;
+	}
 
-  .totals {
-    padding: 3rem 1rem 3rem 1rem;
-    /* // border-bottom: 0.1rem solid #00000033; */
-  }
+	.totals {
+		padding: 3rem 1rem 3rem 1rem;
+		/* // border-bottom: 0.1rem solid #00000033; */
+	}
 
-  .total-price {
-    font-weight: bold;
-  }
+	.total-price {
+		font-weight: bold;
+	}
 
-  .btn-cart {
-    width: 100%;
-    text-align: center;
-  }
+	.btn-cart {
+		width: 100%;
+		text-align: center;
+	}
 }
