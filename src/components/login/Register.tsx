@@ -1,43 +1,50 @@
 import { Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
-// import { DevTool } from "@hookform/devtools";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
+// import { DevTool } from "@hookform/devtools";
 
 import { PageBanner, bannerRegister } from "../utils/helper";
 
+const registerSchema = z.object({
+	registerFirstName: z
+		.string()
+		.min(4, { message: "FirstName must have atleast 4 characters." })
+		.max(24, { message: "FirstName can only have 20 characters." }),
+	registerLastName: z
+		.string()
+		.min(4, { message: "LastName must have atleast 4 characters." })
+		.max(24, { message: "LastName can only have 20 characters." }),
+
+	registerEmail: z
+		.string()
+		.email({ message: "Invalid Email Format!" })
+		.regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
+
+	registerPassword: z
+		.string()
+		.regex(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/, {
+			message:
+				"Password must contain eight characters, at least one letter, one number, and one special character",
+		}),
+});
+
+type RegisterSchemaProps = z.infer<typeof registerSchema>;
+
 const Register = () => {
-	// const API_KEY = process.env.VITE_API_KEY;
-	// using VITE as build tool, so process is not available
-
-	// const API_KEY = import.meta.env.VITE_API_KEY;
-	// const API_URL = new URL(`https://identitytoolkit.googleapis.com/v1/accounts:signUp`);
-	// API_URL.searchParams.set("key", API_KEY);
-
-	// const url = API_URL.toString();
-
 	const {
 		register,
 		reset,
 		handleSubmit,
 		formState: { errors },
-	} = useForm();
+	} = useForm<RegisterSchemaProps>({ resolver: zodResolver(registerSchema) });
 
-	// const registerHandler = (data) => {
-	// 	setIsLogin((prevState) => !prevState);
-	// 	console.log("User Logged in!", data.registerEmail);
-	// 	reset();
-
-	// 	axios
-	// 		.post(url, {
-	// 			email: data.registerEmail,
-	// 			password: data.registerPassword,
-	// 			returnSecureToken: true,
-	// 		})
-	// 		.then((response) => {
-	// 			console.log(response.status);
-	// 		});
-	// };
+	const submitHandler = (data: RegisterSchemaProps) => {
+		console.log(data);
+		reset();
+	};
 
 	return (
 		<main>
@@ -49,7 +56,7 @@ const Register = () => {
 							Register
 						</Typography>
 
-						<form onSubmit={handleSubmit(registerHandler)}>
+						<form onSubmit={handleSubmit(submitHandler)}>
 							<Stack direction={"row"} gap={"1rem"} alignItems={"center"}>
 								<label htmlFor="registerFirstName">
 									First Name <span>*</span>
@@ -60,14 +67,7 @@ const Register = () => {
 								type="text"
 								id="registerFirstName"
 								placeholder="First Name"
-								{...register("registerFirstName", {
-									required: {
-										value: true,
-										message: "FirstName must have atleast 6 letters & atmost 20 letters ",
-									},
-									minLength: 4,
-									maxLength: 20,
-								})}
+								{...register("registerFirstName")}
 							/>
 
 							<Stack direction={"row"} gap={"1rem"} alignItems={"center"}>
@@ -80,14 +80,7 @@ const Register = () => {
 								type="text"
 								id="registerLastName"
 								placeholder="Last Name"
-								{...register("registerLastName", {
-									required: {
-										value: true,
-										message: "LastName must have atleast 6 letters & atmost 20 letters ",
-									},
-									minLength: 4,
-									maxLength: 20,
-								})}
+								{...register("registerLastName")}
 							/>
 
 							<Stack direction={"row"} gap={"1rem"} alignItems={"center"}>
@@ -100,16 +93,7 @@ const Register = () => {
 								type="email"
 								id="registerEmail"
 								placeholder="Your email*"
-								{...register("registerEmail", {
-									required: {
-										value: true,
-										message: "Email is Required!",
-									},
-									pattern: {
-										value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-										message: "Invalid Email Format!",
-									},
-								})}
+								{...register("registerEmail")}
 							/>
 
 							<Stack direction={"row"} gap={"1rem"} alignItems={"center"}>

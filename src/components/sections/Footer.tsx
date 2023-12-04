@@ -3,8 +3,19 @@ import { Link } from "react-router-dom";
 
 import { DevTool } from "@hookform/devtools";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
 
+import { zodResolver } from "@hookform/resolvers/zod/src/zod.js";
 import { ScrollTop, SocialIcons, logoLight } from "../utils/helper";
+
+const footerFormSchema = z.object({
+	email: z
+		.string()
+		.email({ message: "Invalid email format" })
+		.regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
+});
+
+type FooterFormSchemaProps = z.infer<typeof footerFormSchema>;
 
 const Footer = () => {
 	const {
@@ -13,9 +24,9 @@ const Footer = () => {
 		handleSubmit,
 		control,
 		formState: { errors },
-	} = useForm();
+	} = useForm<FooterFormSchemaProps>({ resolver: zodResolver(footerFormSchema) });
 
-	const submitHandler = (data) => {
+	const submitHandler = (data: FooterFormSchemaProps) => {
 		console.log(data);
 		reset();
 	};
@@ -128,20 +139,7 @@ const Footer = () => {
 
 						<form onSubmit={handleSubmit(submitHandler)}>
 							<label htmlFor="email">Email Address</label>
-							<input
-								type="email"
-								placeholder="Enter your Email.."
-								{...register("email", {
-									required: {
-										value: true,
-										message: "Email is required!",
-									},
-									pattern: {
-										value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-										message: "invalid email format",
-									},
-								})}
-							/>
+							<input type="email" placeholder="Enter your Email.." {...register("email")} />
 
 							<button type="submit" className="btn btn-light">
 								SUBSCRIBE

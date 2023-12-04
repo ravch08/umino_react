@@ -93,6 +93,7 @@ footer {
 .form-error {
 	color: red;
 	margin-left: 1rem;
+	margin-bottom: 1rem;
 	font-size: var(--fs-topbar);
 }
 

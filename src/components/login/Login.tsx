@@ -1,9 +1,28 @@
 import { Stack, Typography } from "@mui/material";
 
 import { DevTool } from "@hookform/devtools";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { z } from "zod";
+
 import { bannerLogin, PageBanner } from "../utils/helper";
+
+const loginSchema = z.object({
+	loginEmail: z
+		.string()
+		.email({ message: "Invalid Email Format!" })
+		.regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
+
+	loginPassword: z
+		.string()
+		.regex(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/, {
+			message:
+				"Password must contain eight characters, at least one letter, one number, and one special character",
+		}),
+});
+
+type LoginSchemaProps = z.infer<typeof loginSchema>;
 
 const Login = () => {
 	const {
@@ -12,9 +31,11 @@ const Login = () => {
 		handleSubmit,
 		control,
 		formState: { errors },
-	} = useForm();
+	} = useForm<LoginSchemaProps>({
+		resolver: zodResolver(loginSchema),
+	});
 
-	const loginHandler = (data) => {
+	const loginHandler = (data: LoginSchemaProps) => {
 		console.log("User Logged in!", data);
 		reset();
 	};
@@ -47,16 +68,7 @@ const Login = () => {
 									type="email"
 									id="loginEmail"
 									placeholder="Your email*"
-									{...register("loginEmail", {
-										required: {
-											value: true,
-											message: "Email is Required!",
-										},
-										pattern: {
-											value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-											message: "Invalid Email Format!",
-										},
-									})}
+									{...register("loginEmail")}
 								/>
 
 								<Stack direction={"row"} gap={"2rem"} alignItems={"center"}>
@@ -69,17 +81,7 @@ const Login = () => {
 									type="password"
 									id="loginPassword"
 									placeholder="Password*"
-									{...register("loginPassword", {
-										required: {
-											value: true,
-											message: "Password is Required!",
-										},
-										pattern: {
-											value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/,
-											message:
-												"Password must contain eight characters, at least one letter, one number, and one special character",
-										},
-									})}
+									{...register("loginPassword")}
 								/>
 
 								<Link to="#!" className="forgotPassword">

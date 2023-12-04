@@ -1,10 +1,24 @@
-import { Stack, Typography } from "@mui/material";
-import { Location } from "../utils/helper";
-
 import { DevTool } from "@hookform/devtools";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Stack, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
+import { string, z } from "zod";
 
 import { contactAddressItems } from "../utils/data";
+import { Location } from "../utils/helper";
+
+const contactSchema = z.object({
+	contactFullName: string()
+		.min(5, { message: "Must be 4 or more characters long" })
+		.max(24, { message: "Must be s4 characters or less" }),
+	contactEmail: z
+		.string()
+		.email({ message: "Invalid email address" })
+		.regex(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/),
+	contactText: z.string().min(6, { message: "Must be 6 or more characters long." }),
+});
+
+type ContactSchemaProps = z.infer<typeof contactSchema>;
 
 const Contact = () => {
 	const {
@@ -13,9 +27,9 @@ const Contact = () => {
 		handleSubmit,
 		control,
 		formState: { errors },
-	} = useForm();
+	} = useForm<ContactSchemaProps>({ resolver: zodResolver(contactSchema) });
 
-	const submitHandler = (data) => {
+	const submitHandler = (data: ContactSchemaProps) => {
 		console.log(data);
 		reset();
 	};
@@ -78,14 +92,7 @@ const Contact = () => {
 										autoFocus
 										type="text"
 										placeholder="Full Name*"
-										{...register("contactFullName", {
-											required: {
-												value: true,
-												message: "Full Name is required!",
-											},
-											minLength: 5,
-											maxLength: 24,
-										})}
+										{...register("contactFullName")}
 									/>
 									<p className="form-error">{errors.contactFullName?.message}</p>
 								</div>
@@ -94,25 +101,12 @@ const Contact = () => {
 									<label htmlFor="contactEmail">
 										Email <span>*</span>
 									</label>
-									<input
-										type="email"
-										placeholder="Your email*"
-										{...register("contactEmail", {
-											required: {
-												value: true,
-												message: "Email is required",
-											},
-											pattern: {
-												value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-												message: "Email format is Invalid!",
-											},
-										})}
-									/>
+									<input type="email" placeholder="Your email*" {...register("contactEmail")} />
 									<p className="form-error">{errors.contactEmail?.message}</p>
 								</div>
 							</Stack>
 
-							<textarea rows="8" placeholder="Comment" {...register("contactText")}></textarea>
+							<textarea rows={8} placeholder="Comment" {...register("contactText")}></textarea>
 
 							<input type="submit" className="btn btn-dark" value="SEND MESSAGE" />
 						</form>
