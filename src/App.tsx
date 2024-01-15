@@ -22,7 +22,7 @@ import {
 	Wishlist,
 } from "./components/utils/helper";
 
-const Wrapper = ({ children }: { children: ReactNode }) => {
+const Wrapper = ({ children }: { children: JSX.Element[] }) => {
 	const location = useLocation();
 	useLayoutEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [location.pathname]);
 
@@ -35,7 +35,7 @@ const App = () => {
 
 	useEffect(() => {
 		dispatch(getCartTotal());
-	}, [carts]);
+	}, [carts, dispatch]);
 
 	return (
 		<BrowserRouter>

@@ -32,7 +32,7 @@ const NewArrivals = () => {
 	const filteredCategories = ["All", ...new Set(categoryAll)];
 
 	const categoryFilteredItems = allProductItems.filter((item: ProductCardProps) =>
-		item.category.includes(isCategory)
+		item.category!.includes(isCategory)
 	);
 
 	return (
@@ -70,11 +70,11 @@ const NewArrivals = () => {
 				</Stack>
 
 				<Stack
+					gap={"2rem"}
+					flexWrap={"wrap"}
 					alignItems={"center"}
 					justifyContent={"center"}
 					className="product-wrapper"
-					gap={"2rem"}
-					flexWrap={"wrap"}
 					direction={{ xs: "column", md: "row" }}
 				>
 					{(isCategory === "All" ? allProductItems : categoryFilteredItems)?.map((item) => {

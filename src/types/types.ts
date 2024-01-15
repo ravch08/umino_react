@@ -19,7 +19,7 @@ export type ProductCardProps = {
 	imgSrc1: string;
 	imgSrc11: string;
 	title: string;
-	category: string[];
+	category?: string[];
 };
 
 export type ProductCardPropsExtend = {
