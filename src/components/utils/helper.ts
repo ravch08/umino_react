@@ -100,6 +100,7 @@ export { default as Categories } from "../pages/Categories";
 export { default as CategoryDetail } from "../pages/CategoryDetail";
 export { default as Contact } from "../pages/Contact";
 export { default as Home } from "../pages/Home";
+export { default as Layout } from "../pages/Layout";
 export { default as Page404 } from "../pages/Page404";
 export { default as ProductDetail } from "../pages/ProductDetail";
 export { default as Shop } from "../pages/Shop";

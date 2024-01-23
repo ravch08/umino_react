@@ -1,9 +1,15 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartTotal } from "./app/wishCartSlice";
 
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import {
+	Route,
+	RouterProvider,
+	createBrowserRouter,
+	createRoutesFromElements,
+} from "react-router-dom";
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
 	AboutUs,
 	BlogPage,
@@ -11,9 +17,8 @@ import {
 	Categories,
 	CategoryDetail,
 	Contact,
-	Footer,
-	Header,
 	Home,
+	Layout,
 	Login,
 	Page404,
 	ProductDetail,
@@ -22,12 +27,33 @@ import {
 	Wishlist,
 } from "./components/utils/helper";
 
-const Wrapper = ({ children }: { children: JSX.Element[] }) => {
-	const location = useLocation();
-	useLayoutEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [location.pathname]);
+const router = createBrowserRouter(
+	createRoutesFromElements(
+		<Route path="/" element={<Layout />}>
+			<Route path="/" element={<Home />} />
+			<Route path="cart" element={<Cart />} />
+			<Route path="login" element={<Login />} />
+			<Route path="aboutUs" element={<AboutUs />} />
+			<Route path="shop" element={<Shop />} />
+			<Route path="blog" element={<BlogPage />} />
+			<Route path="contact" element={<Contact />} />
+			<Route path="register" element={<Register />} />
+			<Route path="wishlist" element={<Wishlist />} />
+			<Route path="categories" element={<Categories />} />
+			<Route path="categories/:id" element={<CategoryDetail />} />
+			<Route path="product/:id" element={<ProductDetail />} />
+			<Route path="*" element={<Page404 />} />
+		</Route>
+	)
+);
 
-	return children;
-};
+export const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			staleTime: 1000 * 60,
+		},
+	},
+});
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -38,27 +64,9 @@ const App = () => {
 	}, [carts, dispatch]);
 
 	return (
-		<BrowserRouter>
-			<Wrapper>
-				<Header />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="cart" element={<Cart />} />
-					<Route path="login" element={<Login />} />
-					<Route path="aboutUs" element={<AboutUs />} />
-					<Route path="shop" element={<Shop />} />
-					<Route path="blog" element={<BlogPage />} />
-					<Route path="contact" element={<Contact />} />
-					<Route path="register" element={<Register />} />
-					<Route path="wishlist" element={<Wishlist />} />
-					<Route path="categories" element={<Categories />} />
-					<Route path="categories/:categoryID" element={<CategoryDetail />} />
-					<Route path="product/:productID" element={<ProductDetail />} />
-					<Route path="*" element={<Page404 />} />
-				</Routes>
-				<Footer />
-			</Wrapper>
-		</BrowserRouter>
+		<QueryClientProvider client={queryClient}>
+			<RouterProvider router={router} />
+		</QueryClientProvider>
 	);
 };
 

@@ -1,0 +1,295 @@
+{
+	"categoryItems": [
+		{
+			"id": 1,
+			"title": "Sofa",
+			"imgSrc": "http://localhost:5173/src/assets/category_1.jpg"
+		},
+		{
+			"id": 2,
+			"title": "Lighting",
+			"imgSrc": "http://localhost:5173/src/assets/category_2.jpg"
+		},
+		{
+			"id": 3,
+			"title": "Bathroom",
+			"imgSrc": "http://localhost:5173/src/assets/category_3.jpg"
+		},
+		{
+			"id": 4,
+			"title": "Bedrooom",
+			"imgSrc": "http://localhost:5173/src/assets/category_4.jpg"
+		},
+		{
+			"id": 5,
+			"title": "Outdoor",
+			"imgSrc": "http://localhost:5173/src/assets/category_5.jpg"
+		},
+		{
+			"id": 6,
+			"title": "Home Kitchen",
+			"imgSrc": "http://localhost:5173/src/assets/category_6.jpg"
+		}
+	],
+
+	"salesItems": [
+		{
+			"id": 1,
+			"link": "#!",
+			"imgSrc": "http://localhost:5173/src/assets/sales_banner_1.webp",
+			"title": "Top Trend Style",
+			"superHeading": "SALE 50% OFF",
+			"description": "In-store & online. HUrry up! Limited time offer."
+		},
+		{
+			"id": 2,
+			"link": "#!",
+			"imgSrc": "http://localhost:5173/src/assets/sales_banner_2.webp",
+			"title": "Here's to You",
+			"superHeading": "Hot Under $59",
+			"description": "Discover selected items with many discounts."
+		}
+	],
+
+	"shippingItems": [
+		{
+			"id": 1,
+			"imgSrc": "http://localhost:5173/src/assets/shipping_1.png",
+			"title": "Free Shipping",
+			"description": "Get complimentary ground shipping on every order. Don't love it? Send it back, on us."
+		},
+		{
+			"id": 2,
+			"imgSrc": "http://localhost:5173/src/assets/shipping_2.png",
+			"title": "Free Returns",
+			"description": "Free returns within 10 days, please make sure the items are in undamaged condition."
+		},
+		{
+			"id": 3,
+			"imgSrc": "http://localhost:5173/src/assets/shipping_3.png",
+			"title": "Support Online",
+			"description": "We support customers 24/7, send questions we will solve for you immediately."
+		}
+	],
+
+	"blogItems": [
+		{
+			"id": 1,
+			"date": "Apr 28 2023",
+			"author": "Ruston Grey",
+			"category": "FURNITURE",
+			"title": "Restoring Old Furniture Pieces",
+			"imgSrc": "http://localhost:5173/src/assets/furniture-blog-1.jpg",
+			"description": "These are the people who make your life asier. Large tiles were arranged on the counter top plate near the window of the living room, they..."
+		},
+		{
+			"id": 2,
+			"date": "May 21 2023",
+			"author": "Sasha Brown",
+			"category": "FURNITURE",
+			"title": "Eco-friendly Furniture For Home",
+			"imgSrc": "http://localhost:5173/src/assets/furniture-blog-2.jpg",
+			"description": "These are the people who make your life asier. Large tiles were arranged on the counter top plate near the window of the living room, they..."
+		},
+		{
+			"id": 3,
+			"date": "Jun 18 2023",
+			"author": "John Marvel",
+			"category": "FURNITURE",
+			"title": "Investing In High-quality Furniture",
+			"imgSrc": "http://localhost:5173/src/assets/furniture-blog-3.jpg",
+			"description": "These are the people who make your life asier. Large tiles were arranged on the counter top plate near the window of the living room, they..."
+		}
+	],
+
+	"bannerItems": [
+		{
+			"id": 1,
+			"imgSrc": "http://localhost:5173/src/assets/slide-furinture-1.jpg",
+			"imgSrc768": "http://localhost:5173/src/assets/slide-furinture-1-768px.jpg",
+			"imgSrc1024": "http://localhost:5173/src/assets/slide-furinture-1-1024px.jpg",
+			"imgSrc1200": "http://localhost:5173/src/assets/slide-furinture-1-1200px.jpg",
+			"title": "Bedroom Textiles",
+			"superHeading": "Beautiful & Elegant",
+			"subHeading": "Discount 50% on Products & Free Shipping."
+		},
+		{
+			"id": 2,
+			"imgSrc": "http://localhost:5173/src/assets/slide-furinture-2.jpg",
+			"imgSrc768": "http://localhost:5173/src/assets/slide-furinture-2-768px.jpg",
+			"imgSrc1024": "http://localhost:5173/src/assets/slide-furinture-2-1024px.jpg",
+			"imgSrc1200": "http://localhost:5173/src/assets/slide-furinture-2-1200px.jpg",
+			"title": "Pendant Light",
+			"superHeading": "Kitchen Tools ",
+			"subHeading": "Discount 50% on Products & Free Shipping."
+		}
+	],
+
+	"pageBannerItems": [
+		{
+			"id": 1,
+			"title": "Our Perfect Store",
+			"superHeading": "WELCOME TO UMINO",
+			"imgSrc": "http://localhost:5173/src/assets/banner_aboutus.jpg",
+			"description": "Over 20 years of experience, we have crafted thousands of strategic discovery process that enables us to peel back the layers which enable us to understand, connect understand, connect."
+		}
+	],
+
+	"whyChooseItems": [
+		{
+			"id": 1,
+			"imgSrc": "http://localhost:5173/src/assets/banner-about-1.webp",
+			"title": "Unique for Women’s",
+			"description": "Our collections dress a unique and feminine woman. The pieces showcase a timeless style while keeping in mind fashion aesthetics and trends."
+		},
+		{
+			"id": 2,
+			"imgSrc": "http://localhost:5173/src/assets/banner-about-2.webp",
+			"title": "Elegant for Men’s",
+			"description": "From traditional tailoring to the most informal pieces. Our Umino Man collections feature the latest trends with the maximum comfort."
+		},
+		{
+			"id": 3,
+			"imgSrc": "http://localhost:5173/src/assets/banner-about-3.webp",
+			"title": "Freedom for Everyone",
+			"description": "The designs have been created adopting the current trends, while leaving room for personal expression among young people."
+		}
+	],
+
+	"productItems": [
+		{
+			"id": 1,
+			"stars": 0,
+			"price": 280.0,
+			"cartQuantity": 1,
+			"priceCrossed": "",
+			"imgSrc1": "http://localhost:5173/src/assets/new_arrival_1_1.jpg",
+			"imgSrc11": "http://localhost:5173/src/assets/new_arrival_1_2.jpg",
+			"title": "Form Chair Brass Base",
+			"category": ["Sofa", "Outdoor", "Bathroom"]
+		},
+		{
+			"id": 2,
+			"stars": 5,
+			"price": 80.0,
+			"cartQuantity": 1,
+			"priceCrossed": "",
+			"imgSrc1": "http://localhost:5173/src/assets/new_arrival_2_1.jpg",
+			"imgSrc11": "http://localhost:5173/src/assets/new_arrival_2_2.jpg",
+			"title": "Vase Echasse Large",
+			"category": ["Outdoor", "Home Kitchen", "Bedroom"]
+		},
+		{
+			"id": 3,
+			"stars": 1,
+			"price": 150.0,
+			"cartQuantity": 1,
+			"priceCrossed": "",
+			"imgSrc1": "http://localhost:5173/src/assets/new_arrival_3_1.jpg",
+			"imgSrc11": "http://localhost:5173/src/assets/new_arrival_3_2.jpg",
+			"title": "Simple Model Chair",
+			"category": ["Sofa", "Outdoor"]
+		},
+		{
+			"id": 4,
+			"stars": 4,
+			"price": 120.0,
+			"cartQuantity": 1,
+			"priceCrossed": "",
+			"imgSrc1": "http://localhost:5173/src/assets/new_arrival_4_1.jpg",
+			"imgSrc11": "http://localhost:5173/src/assets/new_arrival_4_2.jpg",
+			"title": "Bottle Grinder of Pepper",
+			"category": ["Home Kitchen", "Bathroom"]
+		},
+		{
+			"id": 5,
+			"stars": 4,
+			"price": 120.0,
+			"cartQuantity": 1,
+			"priceCrossed": 130.0,
+			"imgSrc1": "http://localhost:5173/src/assets/trending_1_1.jpg",
+			"imgSrc11": "http://localhost:5173/src/assets/trending_1_2.jpg",
+			"title": "Form Bar Stool Oak Base",
+			"category": ["Sofa", "Outdoor"]
+		},
+		{
+			"id": 6,
+			"stars": 3,
+			"price": 160.0,
+			"cartQuantity": 1,
+			"priceCrossed": 200.0,
+			"imgSrc1": "http://localhost:5173/src/assets/trending_2_1.jpg",
+			"imgSrc11": "http://localhost:5173/src/assets/trending_2_2.jpg",
+			"title": "Carrie Table Lamp",
+			"category": ["Outdoor", "Lighting", "Bedroom", "Home Kitchen"]
+		},
+		{
+			"id": 7,
+			"stars": 5,
+			"price": 60.0,
+			"cartQuantity": 1,
+			"priceCrossed": "",
+			"imgSrc1": "http://localhost:5173/src/assets/trending_3_1.jpg",
+			"imgSrc11": "http://localhost:5173/src/assets/trending_3_2.jpg",
+			"title": "Wooden Lamp Drop",
+			"category": ["Outdoor", "Lighting", "Bedroom", "Home Kitchen"]
+		},
+		{
+			"id": 8,
+			"stars": 4,
+			"price": 60.0,
+			"cartQuantity": 1,
+			"priceCrossed": "",
+			"imgSrc1": "http://localhost:5173/src/assets/trending_4_1.jpg",
+			"imgSrc11": "http://localhost:5173/src/assets/trending_4_2.jpg",
+			"title": "Hammershoi Spice Mill Small",
+			"category": ["Home Kitchen", "Bathroom"]
+		},
+		{
+			"id": 9,
+			"stars": 5,
+			"price": 300.0,
+			"cartQuantity": 1,
+			"priceCrossed": "",
+			"imgSrc1": "http://localhost:5173/src/assets/trending_5_1.jpg",
+			"imgSrc11": "http://localhost:5173/src/assets/trending_5_2.jpg",
+			"title": "Wave Sideboard Anthracite",
+			"category": ["Outdoor", "Home Kitchen"]
+		},
+		{
+			"id": 10,
+			"stars": 4,
+			"price": 160.0,
+			"cartQuantity": 1,
+			"priceCrossed": 200.0,
+			"imgSrc1": "http://localhost:5173/src/assets/trending_6_1.jpg",
+			"imgSrc11": "http://localhost:5173/src/assets/trending_6_2.jpg",
+			"title": "Form Armchair Black",
+			"category": ["Sofa", "Outdoor", "Bedroom"]
+		}
+	],
+
+	"contactAddressItems": [
+		{
+			"id": 1,
+			"tel": "+222-1800-262",
+			"branch": "Umino - United States",
+			"hours": "Everyday 9:00 am - 6:00 pm",
+			"address": "68 St, South New York/NY 98944, United States. blueskytechcompany@gmail.comm"
+		},
+		{
+			"id": 2,
+			"tel": "+222-1800-262",
+			"branch": "Umino - India",
+			"hours": "Everyday 9:00 am - 6:00 pm",
+			"address": "68 St, South New York/NY 98944, United States. blueskytechcompany@gmail.comm"
+		},
+		{
+			"id": 3,
+			"tel": "+222-1800-262",
+			"branch": "Umino - United Kingdom",
+			"hours": "Everyday 9:00 am - 6:00 pm",
+			"address": "68 St, South New York/NY 98944, United States. blueskytechcompany@gmail.comm"
+		}
+	]
+}

@@ -6,7 +6,7 @@
 		border-radius: 5rem;
 		padding: 1.4rem 2.5rem;
 		font-size: var(--fs-btn);
-		background-color: white;
+		background-color: antiquewhite;
 		color: var(--color-Dark-800);
 		transition: background-color 0.3s ease-in-out;
 

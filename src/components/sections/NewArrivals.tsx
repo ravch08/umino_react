@@ -1,37 +1,59 @@
-import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-
 import { Stack } from "@mui/material";
 import { ProductCard } from "../utils/helper";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { v4 as uuid } from "uuid";
+
+import { number, string, z } from "zod";
 import { addToCart, addToWishlist, removeFromWishlist } from "../../app/wishCartSlice";
-import { ProductCardProps } from "../../types/types";
+import { getProducts } from "../utils/api";
+
+const productSchema = z.object({
+	id: number().optional(),
+	stars: number()
+		.min(1, { message: "Minimal value cannot be less than 1" })
+		.max(5, { message: "Maximum value cannot be more than 5" }),
+	price: number(),
+	cartQuantity: number(),
+	priceCrossed: number().or(string()),
+	imgSrc1: string().url(),
+	imgSrc11: string().url(),
+	title: string(),
+	category: string().array(),
+});
+
+export type ProductProps = z.infer<typeof productSchema>;
 
 const NewArrivals = () => {
+	const [active, setActive] = useState(false);
+	const [isCategory, setIsCategory] = useState<string>("All");
+
 	const dispatch = useDispatch();
 	const categoryAll: string[] = [];
 
-	const [active, setActive] = useState(false);
-	const allProductItems = useSelector((state) => state.wishCartState.items);
+	const { data } = useQuery({
+		queryKey: ["products"],
+		queryFn: getProducts,
+	});
 
-	const [isCategory, setIsCategory] = useState("All");
-
-	const getCategory = (e) => {
-		const tabCategory = e.target.dataset.category;
+	const getCategory = (e: React.MouseEvent<HTMLButtonElement>) => {
+		console.log(e);
+		const target = e.target as HTMLButtonElement;
+		const tabCategory = target.dataset.category!;
 		setIsCategory(tabCategory);
 		setActive(!active);
 	};
 
-	const categoryArray = allProductItems.map((item: ProductCardProps) => item.category);
-
-	categoryArray.map((innerArray: string[]) => {
-		innerArray.forEach((item) => categoryAll.push(item));
-	});
+	data
+		?.map((item: ProductProps) => item.category)
+		?.map((innerArray: string[]) => {
+			innerArray.forEach((item) => categoryAll.push(item));
+		});
 
 	const filteredCategories = ["All", ...new Set(categoryAll)];
-
-	const categoryFilteredItems = allProductItems.filter((item: ProductCardProps) =>
+	const filteredProducts = data?.filter((item: ProductProps) =>
 		item.category!.includes(isCategory)
 	);
 
@@ -54,19 +76,16 @@ const NewArrivals = () => {
 					className="product-tabs"
 					justifyContent={"center"}
 				>
-					{filteredCategories?.map((item) => {
-						return (
-							<button
-								key={uuidv4()}
-								data-category={item}
-								onClick={getCategory}
-								className={isCategory === item ? "active tab-item" : "tab-item"}
-							>
-								{" "}
-								{item}{" "}
-							</button>
-						);
-					})}
+					{filteredCategories?.map((item) => (
+						<button
+							key={uuid()}
+							data-category={item}
+							onClick={getCategory}
+							className={isCategory === item ? "active tab-item" : "tab-item"}
+						>
+							{item}
+						</button>
+					))}
 				</Stack>
 
 				<Stack
@@ -77,7 +96,7 @@ const NewArrivals = () => {
 					className="product-wrapper"
 					direction={{ xs: "column", md: "row" }}
 				>
-					{(isCategory === "All" ? allProductItems : categoryFilteredItems)?.map((item) => {
+					{(isCategory === "All" ? data : filteredProducts)?.map((item: ProductProps) => {
 						return (
 							<ProductCard
 								key={item.id}
