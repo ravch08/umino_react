@@ -6,6 +6,8 @@ import {
 	getCategories,
 	getContactAddressItems,
 	getProducts,
+	getSalesItems,
+	getShippingItems,
 	getWhyChoose,
 } from "./api";
 
@@ -30,10 +32,24 @@ export const blogsLoader = () => {
 	});
 };
 
+export const saleBannerLoader = () => {
+	return queryClient.fetchQuery({
+		queryKey: ["salesItems"],
+		queryFn: getSalesItems,
+	});
+};
+
 export const whyChooseLoader = () => {
 	return queryClient.fetchQuery({
 		queryKey: ["whyChoose"],
 		queryFn: getWhyChoose,
+	});
+};
+
+export const shippingItemLoader = () => {
+	return queryClient.fetchQuery({
+		queryKey: ["shippingItems"],
+		queryFn: getShippingItems,
 	});
 };
 
