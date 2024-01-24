@@ -8,15 +8,14 @@ const initialState = {
 	totalPrice: 0,
 	items: productItems,
 	totalCartQuantity: 0,
-}
+};
 
 const wishCartSlice = createSlice({
-	name: 'cart',
+	name: "cart",
 	initialState,
 	reducers: {
-
 		addToWishlist: (state, action) => {
-			const el = state.wishCarts.findIndex(item => item.id === action.payload.id);
+			const el = state.wishCarts.findIndex((item) => item.id === action.payload.id);
 			if (el >= 0) {
 				state.wishCarts[el].wishQuantity += 1;
 			} else {
@@ -25,11 +24,11 @@ const wishCartSlice = createSlice({
 		},
 
 		removeFromWishlist: (state, action) => {
-			state.wishCarts = state.wishCarts.filter((item) => item.id !== action.payload)
+			state.wishCarts = state.wishCarts.filter((item) => item.id !== action.payload);
 		},
 
 		addToCart: (state, action) => {
-			const el = state.carts.findIndex(item => item.id === action.payload.id);
+			const el = state.carts.findIndex((item) => item.id === action.payload.id);
 			if (el >= 0) {
 				state.carts[el].cartQuantity += 1;
 			} else {
@@ -73,8 +72,8 @@ const wishCartSlice = createSlice({
 				return item;
 			});
 		},
-	}
-})
+	},
+});
 
 export const {
 	addToCart,

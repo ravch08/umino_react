@@ -2,9 +2,10 @@ import { DevTool } from "@hookform/devtools";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Stack, Typography } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { string, z } from "zod";
+import { number, string, z } from "zod";
 
-import { contactAddressItems } from "../utils/data";
+import { useQuery } from "@tanstack/react-query";
+import { getContactAddressItems } from "../utils/api";
 import { Location } from "../utils/helper";
 
 const contactSchema = z.object({
@@ -18,9 +19,23 @@ const contactSchema = z.object({
 	contactText: z.string().min(6, { message: "Must be 6 or more characters long." }),
 });
 
-type ContactSchemaProps = z.infer<typeof contactSchema>;
+export const contactAddressSchema = z.object({
+	id: number().optional(),
+	tel: string().min(5, { message: "Must be 4 or more characters long" }),
+	branch: string(),
+	hours: string(),
+	address: string(),
+});
+
+export type ContactSchemaProps = z.infer<typeof contactSchema>;
+export type ContactAddressItemsProps = z.infer<typeof contactAddressSchema>;
 
 const Contact = () => {
+	const { data, status } = useQuery({
+		queryKey: ["addressItems"],
+		queryFn: getContactAddressItems,
+	});
+
 	const {
 		register,
 		reset,
@@ -51,22 +66,25 @@ const Contact = () => {
 						justifyContent={"space-between"}
 						direction={{ xs: "column", md: "row" }}
 					>
-						{contactAddressItems?.map((item) => {
-							return (
-								<Stack direction={"column"} className="address-item" key={item.id}>
-									<Typography variant="h4" mb={"2rem"} component={"h2"}>
-										{item.branch}
-									</Typography>
-									<p>{item.address}</p>
-									<a href={`tel:+${item.tel}`} className="address-phone">
-										Tel: {item.tel}
-									</a>
-									<p>
-										<span>Opening Hours:</span> {item.hours}
-									</p>
-								</Stack>
-							);
-						})}
+						{status === "success"
+							? data?.map((item: ContactAddressItemsProps) => {
+									return (
+										<Stack direction={"column"} className="address-item" key={item.id}>
+											<Typography variant="h4" mb={"2rem"} component={"h2"}>
+												{item.branch}
+											</Typography>
+											<p>{item.address}</p>
+											<a href={`tel:+${item.tel}`} className="address-phone">
+												Tel: {item.tel}
+											</a>
+											<p>
+												<span>Opening Hours:</span> {item.hours}
+											</p>
+										</Stack>
+									);
+									// eslint-disable-next-line no-mixed-spaces-and-tabs
+							  })
+							: null}
 					</Stack>
 				</div>
 			</section>

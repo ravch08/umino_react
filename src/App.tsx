@@ -26,17 +26,26 @@ import {
 	Shop,
 	Wishlist,
 } from "./components/utils/helper";
+import { bannerLoader, contactAddressLoader, whyChooseLoader } from "./components/utils/loaders";
+
+export const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			staleTime: 1000 * 60,
+		},
+	},
+});
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<Layout />}>
-			<Route path="/" element={<Home />} />
+			<Route path="/" element={<Home />} loader={bannerLoader} />
 			<Route path="cart" element={<Cart />} />
 			<Route path="login" element={<Login />} />
-			<Route path="aboutUs" element={<AboutUs />} />
+			<Route path="aboutUs" element={<AboutUs />} loader={whyChooseLoader} />
 			<Route path="shop" element={<Shop />} />
 			<Route path="blog" element={<BlogPage />} />
-			<Route path="contact" element={<Contact />} />
+			<Route path="contact" element={<Contact />} loader={contactAddressLoader} />
 			<Route path="register" element={<Register />} />
 			<Route path="wishlist" element={<Wishlist />} />
 			<Route path="categories" element={<Categories />} />
@@ -46,14 +55,6 @@ const router = createBrowserRouter(
 		</Route>
 	)
 );
-
-export const queryClient = new QueryClient({
-	defaultOptions: {
-		queries: {
-			staleTime: 1000 * 60,
-		},
-	},
-});
 
 const App = () => {
 	const dispatch = useDispatch();
